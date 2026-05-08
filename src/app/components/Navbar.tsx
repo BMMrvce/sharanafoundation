@@ -21,17 +21,21 @@ export default function Navbar() {
   };
 
   const scrollToSection = (id: string) => {
+    // Close menu immediately
+    setIsMobileMenuOpen(false);
+    
     const element = document.getElementById(id);
     if (element) {
       const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - offset;
 
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
       });
-      setIsMobileMenuOpen(false);
+    } else {
+      console.warn(`Element with id "${id}" not found`);
     }
   };
 
@@ -58,6 +62,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button
+            type="button"
             onClick={() => scrollToSection('home')}
             className="flex items-center space-x-3 flex-shrink-0"
           >
@@ -71,6 +76,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <button
                 key={link.id}
+                type="button"
                 onClick={() => scrollToSection(link.id)}
                 className="text-sm font-medium text-gray-700 hover:text-[#ff6b35] transition-colors"
               >
@@ -80,6 +86,7 @@ export default function Navbar() {
 
             {/* Language Switcher */}
             <button
+              type="button"
               onClick={toggleLanguage}
               className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
               aria-label="Switch language"
@@ -92,6 +99,7 @@ export default function Navbar() {
 
             {/* Donate Button */}
             <button
+              type="button"
               onClick={() => scrollToSection('donate')}
               className="px-6 py-2.5 bg-gradient-to-r from-[#ff6b35] to-[#ff8c42] text-white rounded-full font-medium hover:shadow-lg transition-all"
             >
@@ -102,6 +110,7 @@ export default function Navbar() {
           {/* Mobile Menu Button & Language Switcher */}
           <div className="flex lg:hidden items-center space-x-2">
             <button
+              type="button"
               onClick={toggleLanguage}
               className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
               aria-label="Switch language"
@@ -110,6 +119,7 @@ export default function Navbar() {
             </button>
 
             <button
+              type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
               aria-label="Toggle menu"
@@ -125,28 +135,44 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-200 shadow-lg"
+            transition={{ duration: 0.2 }}
+            className="lg:hidden bg-white border-t border-gray-200 shadow-lg overflow-hidden"
           >
-            <div className="px-4 py-4 space-y-2 max-h-[calc(100vh-5rem)] overflow-y-auto">
+            <div 
+              className="px-4 py-4 space-y-2 max-h-[calc(100vh-5rem)] overflow-y-auto"
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
               {navLinks.map((link) => (
                 <button
                   key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors"
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    scrollToSection(link.id);
+                  }}
+                  className="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
                 >
                   {link.label}
                 </button>
               ))}
 
               <button
-                onClick={() => scrollToSection('donate')}
-                className="block w-full px-4 py-3 bg-gradient-to-r from-[#ff6b35] to-[#ff8c42] text-white text-center rounded-lg font-medium hover:shadow-lg transition-all mt-4"
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  scrollToSection('donate');
+                }}
+                className="block w-full px-4 py-3 bg-gradient-to-r from-[#ff6b35] to-[#ff8c42] text-white text-center rounded-lg font-medium hover:shadow-lg transition-all mt-4 cursor-pointer"
               >
                 {t('donate')}
               </button>
