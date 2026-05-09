@@ -37,8 +37,12 @@ export default function Leadership() {
             
             <div className="bg-gradient-to-br from-orange-50 to-white p-6 lg:p-12 flex flex-col items-center justify-start lg:justify-center">
               <div className="text-center w-full">
-                <div className="w-48 h-48 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-100 to-orange-100 flex items-center justify-center overflow-hidden shadow-xl">
-                  <UserCircle2 className="w-100 h-100 text-gray-400" />
+                <div className="w-48 h-48 mx-auto mb-4 rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src="/assets/leader.png" 
+                    alt="Dr. Jambunath Gouda"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. Jambunath Gouda</h3>
                 <p className="text-xs text-gray-600 mb-1">
