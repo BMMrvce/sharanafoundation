@@ -29,6 +29,7 @@ const translations: Record<Language, Record<string, string>> = {
     eyeCampsConducted: 'Eye Camps Conducted',
     patientsServed: 'Patients Served',
     freeSurgeries: 'Free Surgeries',
+    surgeriesCompleted: 'Surgeries Completed',
     villagesReached: 'Villages Reached',
   },
   kn: {
@@ -49,6 +50,7 @@ const translations: Record<Language, Record<string, string>> = {
     eyeCampsConducted: 'ಕಣ್ಣಿನ ಶಿಬಿರಗಳು',
     patientsServed: 'ರೋಗಿಗಳಿಗೆ ಸೇವೆ',
     freeSurgeries: 'ಉಚಿತ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗಳು',
+    surgeriesCompleted: 'ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗಳು ಪೂರ್ಣಗೊಂಡಿವೆ',
     villagesReached: 'ಗ್ರಾಮಗಳನ್ನು ತಲುಪಲಾಗಿದೆ',
   },
 };

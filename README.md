@@ -11,12 +11,12 @@
 
   ## Google Sheets CMS for Camps and Activities
 
-  The Events section now reads Camps and Activities rows from SheetDB at runtime.
+  The Events section now reads Camps and Activities rows from a Google Sheets-backed API at runtime using Stein.
 
-  1. Create a `.env` file in the project root.
-  2. Add your SheetDB endpoint:
+  1. Create a `.env` file in the project root (if you don't already have one).
+  2. Add your Stein endpoint (Stein/Steinhq storage URL):
 
-  `VITE_SHEETDB_ACTIVITIES_URL=https://sheetdb.io/api/v1/YOUR_SHEETDB_ID`
+  `VITE_STEIN_ACTIVITIES_URL=https://api.steinhq.com/v1/YOUR_STEIN_ID`
 
   Expected sheet columns:
 

@@ -30,6 +30,53 @@ export default function Activities() {
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 rounded-3xl bg-gradient-to-br from-amber-50 via-white to-orange-50 border border-amber-100 p-6 sm:p-8 shadow-sm">
+            <div className="max-w-4xl">
+              <p className="inline-flex items-center rounded-full bg-[#1e3a8a] px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white mb-4">
+                {language === 'en' ? 'Since 1991' : '1991 ರಿಂದ'}
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                {language === 'en'
+                  ? 'Patient support that continues after surgery and during every camp'
+                  : 'ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಯ ನಂತರವೂ ಮತ್ತು ಪ್ರತಿಯೊಂದು ಶಿಬಿರದಲ್ಲಿಯೂ ಮುಂದುವರಿಯುವ ರೋಗಿ ಸಹಾಯ'}
+              </h2>
+              <div className="grid gap-4 text-gray-700 leading-relaxed text-sm sm:text-base">
+                <div className="rounded-2xl bg-white/80 border border-amber-100 p-4 sm:p-5 shadow-sm">
+                  <p className="font-semibold text-[#1e3a8a] mb-2">
+                    {language === 'en' ? 'Free support for operated patients' : 'ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗೊಂಡ ರೋಗಿಗಳಿಗೆ ಉಚಿತ ಸಹಾಯ'}
+                  </p>
+                  <div className="mb-3 flex flex-wrap gap-2">
+                    <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
+                      {language === 'en' ? 'Free medicine' : 'ಉಚಿತ ಔಷಧಿ'}
+                    </span>
+                    <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
+                      {language === 'en' ? 'Free food' : 'ಉಚಿತ ಆಹಾರ'}
+                    </span>
+                    <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
+                      {language === 'en' ? 'Free spectacles' : 'ಉಚಿತ ಕನ್ನಡಕ'}
+                    </span>
+                  </div>
+                  <p>
+                    {language === 'en'
+                      ? 'We provide free medicine, spectacles, and food to all operated patients, and free food for attenders until the patient is discharged.'
+                      : 'ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗೊಂಡ ಎಲ್ಲಾ ರೋಗಿಗಳಿಗೆ ಉಚಿತ ಔಷಧಿ, ಕನ್ನಡಕ ಮತ್ತು ಆಹಾರವನ್ನು ನೀಡುತ್ತೇವೆ; ರೋಗಿ ಬಿಡುಗಡೆಯಾಗುವವರೆಗೆ ಜೊತೆಯಲ್ಲಿರುವವರಿಗೆ ಕೂಡ ಉಚಿತ ಆಹಾರ ಒದಗಿಸುತ್ತೇವೆ.'}
+                  </p>
+                </div>
+
+                <div className="rounded-2xl bg-white/80 border border-amber-100 p-4 sm:p-5 shadow-sm">
+                  <p className="font-semibold text-[#1e3a8a] mb-2">
+                    {language === 'en' ? 'Special camp tradition' : 'ವಿಶೇಷ ಶಿಬಿರ ಸಂಪ್ರದಾಯ'}
+                  </p>
+                  <p>
+                    {language === 'en'
+                      ? 'During eye camps, we give saris to all operated female patients, female attenders, and female volunteers as a mark of muttaiyederige udi tumbuva karya.'
+                      : 'ಕಣ್ಣಿನ ಶಿಬಿರಗಳ ಸಂದರ್ಭದಲ್ಲಿ, ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗೊಂಡ ಮಹಿಳಾ ರೋಗಿಗಳು, ಮಹಿಳಾ ಜೊತೆಯಲ್ಲಿರುವವರು ಮತ್ತು ಮಹಿಳಾ ಸ್ವಯಂಸೇವಕರಿಗೆ ಮುತ್ತೈದೆಯರಿಗೆ ಉಡಿ ತುಂಬುವ ಕಾರ್ಯದ ಅಂಗವಾಗಿ ಸೀರೆಗಳನ್ನು ನೀಡುತ್ತೇವೆ.'}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {activities.map((activity, i) => (
               <div key={i} className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 hover:shadow-xl transition-all">

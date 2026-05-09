@@ -1,16 +1,12 @@
 import { useLanguage } from '../contexts/LanguageContext';
-import { TrendingUp, Users, Eye, Heart, MapPin, Calendar } from 'lucide-react';
+import { Eye, Heart } from 'lucide-react';
 
 export default function Impact() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
 
   const stats = [
-    { icon: Calendar, value: '35+', label: 'Years of Service' },
-    { icon: Eye, value: '500+', label: 'Eye Camps Conducted' },
-    { icon: Users, value: '50,000+', label: 'Patients Served' },
-    { icon: Heart, value: '5,000+', label: 'Free Surgeries' },
-    { icon: MapPin, value: '300+', label: 'Villages Reached' },
-    { icon: TrendingUp, value: '15,000+', label: 'Spectacles Distributed' },
+    { icon: Eye, value: '25', label: t('eyeCampsConducted') },
+    { icon: Heart, value: '10,000', label: t('surgeriesCompleted') },
   ];
 
   return (
@@ -30,7 +26,7 @@ export default function Impact() {
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {stats.map((stat, i) => (
               <div key={i} className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 text-center">
                 <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center">

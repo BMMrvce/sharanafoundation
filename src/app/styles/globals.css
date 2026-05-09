@@ -7,7 +7,7 @@ html, body {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 64px;
+  scroll-padding-top: 80px;
 }
 
 /* Prevent content bleeding */

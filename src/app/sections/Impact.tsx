@@ -1,7 +1,7 @@
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
-import { Calendar, Eye, Users, Heart, MapPin, TrendingUp } from 'lucide-react';
+import { Eye, Heart } from 'lucide-react';
 
 function CounterCard({ value, suffix, label, icon: Icon, delay }: any) {
   const [count, setCount] = useState(0);
@@ -70,12 +70,8 @@ export default function Impact() {
   const { language, t } = useLanguage();
 
   const stats = [
-    { value: 35, suffix: '+', label: t('yearsOfService'), icon: Calendar },
-    { value: 500, suffix: '+', label: t('eyeCampsConducted'), icon: Eye },
-    { value: 50000, suffix: '+', label: t('patientsServed'), icon: Users },
-    { value: 5000, suffix: '+', label: t('freeSurgeries'), icon: Heart },
-    { value: 300, suffix: '+', label: t('villagesReached'), icon: MapPin },
-    { value: 15000, suffix: '+', label: 'Spectacles Distributed', icon: TrendingUp },
+    { value: 25, suffix: '', label: t('eyeCampsConducted'), icon: Eye },
+    { value: 10000, suffix: '', label: t('surgeriesCompleted'), icon: Heart },
   ];
 
   return (
@@ -98,7 +94,7 @@ export default function Impact() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full">
+        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 w-full max-w-4xl mx-auto">
           {stats.map((stat, i) => (
             <CounterCard key={i} {...stat} delay={i * 0.1} />
           ))}

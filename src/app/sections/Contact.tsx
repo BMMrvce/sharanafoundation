@@ -31,19 +31,19 @@ export default function Contact() {
             {
               icon: Phone,
               title: language === 'en' ? 'Phone' : 'ದೂರವಾಣಿ',
-              content: '+91 XXXXX XXXXX',
+              content: '+91 94481 45035',
               color: 'from-green-500 to-green-600',
             },
             {
               icon: Mail,
               title: language === 'en' ? 'Email' : 'ಇಮೇಲ್',
-              content: 'info@sharanabalaga.in',
+              content: 'sharanarabalaga@outlook.com',
               color: 'from-purple-500 to-purple-600',
             },
             {
               icon: MessageCircle,
               title: 'WhatsApp',
-              content: '+91 XXXXX XXXXX',
+              content: '+91 94481 45035 ',
               color: 'from-orange-500 to-orange-600',
             },
           ].map((info, i) => (

@@ -39,8 +39,8 @@ export default function About() {
             </h3>
             <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
               {language === 'en'
-                ? 'Founded in 1990, Sri Chikkenakoppa Channaveeratata Sharanara Balaga (R) emerged from a vision to ensure no one in rural Karnataka suffers from preventable blindness. Over three decades, we have conducted 500+ eye camps, performed thousands of surgeries, and distributed spectacles to those in need.'
-                : '1990 ರಲ್ಲಿ ಸ್ಥಾಪಿತವಾದ ಶ್ರೀ ಚಿಕ್ಕೆನಕೊಪ್ಪದ ಚನ್ನವೀರತಾತ ಶರಣರ ಬಳಗ (ರಿ), ಕರ್ನಾಟಕದ ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಲ್ಲಿ ತಡೆಯಬಹುದಾದ ಕುರುಡುತನದಿಂದ ಯಾರೂ ಬಳಲುವುದಿಲ್ಲ ಎಂದು ಖಚಿತಪಡಿಸುವ ದೃಷ್ಟಿಯಿಂದ ಹುಟ್ಟಿಕೊಂಡಿತು.'}
+                ? 'Founded in 1990, Sri Chikkenakoppa Channaveeratata Sharanara Balaga (R) emerged from a vision to ensure no one in rural Karnataka suffers from preventable blindness. We have conducted more than 25 eye camps in and around Kampli, Hampi, Kamalapur, Hospet, and Gangavathi. Over three decades, we have conducted 500+ eye camps, performed thousands of surgeries, and distributed spectacles to those in need.'
+                : '1990 ರಲ್ಲಿ ಸ್ಥಾಪಿತವಾದ ಶ್ರೀ ಚಿಕ್ಕೆನಕೊಪ್ಪದ ಚನ್ನವೀರತಾತ ಶರಣರ ಬಳಗ (ರಿ), ಕರ್ನಾಟಕದ ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಲ್ಲಿ ತಡೆಯಬಹುದಾದ ಕುರುಡುತನದಿಂದ ಯಾರೂ ಬಳಲುವುದಿಲ್ಲ ಎಂದು ಖಚಿತಪಡಿಸುವ ದೃಷ್ಟಿಯಿಂದ ಹುಟ್ಟಿಕೊಂಡಿತು. ನಾವು ಕಾಮ್ಪ್ಲಿ, ಹಂಪಿ, ಕಮಲಾಪುರ, ಹೊಸಪೇಟೆ ಮತ್ತು ಗಂಗಾವತಿ ಸುತ್ತಮುತ್ತ 25ಕ್ಕೂ ಹೆಚ್ಚು ಕಣ್ಣಿನ ಶಿಬಿರಗಳನ್ನು ನಡೆಸಿದ್ದೇವೆ. ಮೂರು ದಶಕಗಳಲ್ಲಿ, ನಾವು 500+ ಕಣ್ಣಿನ ಶಿಬಿರಗಳನ್ನು ನಡೆಸಿದ್ದೇವೆ, ಸಾವಿರಾರು ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗಳನ್ನು ಮಾಡಿದ್ದೇವೆ ಮತ್ತು ಅಗತ್ಯವಿರುವವರಿಗೆ ಕನ್ನಡಕಗಳನ್ನು ವಿತರಿಸಿದ್ದೇವೆ.'}
             </p>
             <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
               {language === 'en'
@@ -56,11 +56,9 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-100 to-green-100">
-              <div className="w-full h-full flex items-center justify-center text-gray-400">
-                <Eye className="w-16 h-16 lg:w-24 lg:h-24" />
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-white flex items-center justify-center">
+                <img src="/dist/assets/logo.png" alt="Organization logo" className="w-4/5 h-4/5 object-contain" />
               </div>
-            </div>
           </motion.div>
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
   readonly VITE_SHEETDB_ACTIVITIES_URL: string;
+  readonly VITE_STEIN_ACTIVITIES_URL: string;
 }
 
 interface ImportMeta {

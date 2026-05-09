@@ -27,12 +27,10 @@ export default function Home() {
       {/* Impact Counters */}
       <section className="py-16 bg-gradient-to-br from-blue-50 to-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center max-w-4xl mx-auto">
             {[
-              { icon: Eye, value: '35+', label: t('yearsOfService') },
-              { icon: Users, value: '50,000+', label: t('patientsServed') },
-              { icon: Heart, value: '5,000+', label: t('freeSurgeries') },
-              { icon: MapPin, value: '300+', label: t('villagesReached') },
+              { icon: Eye, value: '25', label: t('eyeCampsConducted') },
+              { icon: Heart, value: '10,000', label: t('surgeriesCompleted') },
             ].map((stat, i) => (
               <motion.div
                 key={i}

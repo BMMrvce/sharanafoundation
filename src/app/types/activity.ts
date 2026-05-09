@@ -9,7 +9,8 @@ export interface Activity {
   status: ActivityStatus;
 }
 
-export interface SheetDbActivityRow {
+// Generic row shape from spreadsheet-backed APIs (Stein, Sheets, etc.)
+export interface DataRow {
   title?: string;
   date?: string;
   location?: string;

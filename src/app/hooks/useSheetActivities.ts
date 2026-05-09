@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { fetchActivitiesFromSheetDb } from '../services/sheetdb';
+import { fetchActivitiesFromStein } from '../services/stein';
 import type { Activity } from '../types/activity';
 
 const REFRESH_INTERVAL_MS = 60_000;
@@ -16,11 +16,11 @@ export function useSheetActivities(): UseSheetActivitiesResult {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const sheetDbUrl = useMemo(() => import.meta.env.VITE_SHEETDB_ACTIVITIES_URL || '', []);
+  const sheetDbUrl = useMemo(() => import.meta.env.VITE_STEIN_ACTIVITIES_URL || import.meta.env.VITE_SHEETDB_ACTIVITIES_URL || '', []);
 
   const loadActivities = useCallback(async () => {
     try {
-      const data = await fetchActivitiesFromSheetDb(sheetDbUrl);
+      const data = await fetchActivitiesFromStein(sheetDbUrl);
       setActivities(data);
       setError(null);
     } catch (err) {

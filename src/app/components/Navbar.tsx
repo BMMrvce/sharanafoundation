@@ -20,25 +20,6 @@ export default function Navbar() {
     setLanguage(language === 'en' ? 'kn' : 'en');
   };
 
-  const scrollToSection = (id: string) => {
-    // Close menu immediately
-    setIsMobileMenuOpen(false);
-    
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    } else {
-      console.warn(`Element with id "${id}" not found`);
-    }
-  };
-
   const navLinks = [
     { id: 'home', label: t('home') },
     { id: 'about', label: t('about') },
@@ -61,27 +42,20 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <button
-            type="button"
-            onClick={() => scrollToSection('home')}
-            className="flex items-center space-x-3 flex-shrink-0"
-          >
-            <div className="w-12 h-12 bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6] rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">SB</span>
-            </div>
-          </button>
+          <a href="#home" className="flex items-center space-x-3 flex-shrink-0">
+            <img src="/dist/assets/logo.png" alt="Organization logo" className="w-12 h-12 object-contain rounded-full" />
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navLinks.map((link) => (
-              <button
+              <a
                 key={link.id}
-                type="button"
-                onClick={() => scrollToSection(link.id)}
+                href={`#${link.id}`}
                 className="text-sm font-medium text-gray-700 hover:text-[#ff6b35] transition-colors"
               >
                 {link.label}
-              </button>
+              </a>
             ))}
 
             {/* Language Switcher */}
@@ -98,13 +72,12 @@ export default function Navbar() {
             </button>
 
             {/* Donate Button */}
-            <button
-              type="button"
-              onClick={() => scrollToSection('donate')}
+            <a
+              href="#donate"
               className="px-6 py-2.5 bg-gradient-to-r from-[#ff6b35] to-[#ff8c42] text-white rounded-full font-medium hover:shadow-lg transition-all"
             >
               {t('donate')}
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button & Language Switcher */}
@@ -144,38 +117,29 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="lg:hidden bg-white border-t border-gray-200 shadow-lg overflow-hidden"
           >
-            <div 
-              className="px-4 py-4 space-y-2 max-h-[calc(100vh-5rem)] overflow-y-auto"
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-            >
+            <div className="px-4 py-4 space-y-2 max-h-[calc(100vh-5rem)] overflow-y-auto">
               {navLinks.map((link) => (
-                <button
+                <a
                   key={link.id}
-                  type="button"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    scrollToSection(link.id);
+                  href={`#${link.id}`}
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
                   }}
                   className="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
                 >
                   {link.label}
-                </button>
+                </a>
               ))}
 
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  scrollToSection('donate');
+              <a
+                href="#donate"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
                 }}
                 className="block w-full px-4 py-3 bg-gradient-to-r from-[#ff6b35] to-[#ff8c42] text-white text-center rounded-lg font-medium hover:shadow-lg transition-all mt-4 cursor-pointer"
               >
                 {t('donate')}
-              </button>
+              </a>
             </div>
           </motion.div>
         )}
