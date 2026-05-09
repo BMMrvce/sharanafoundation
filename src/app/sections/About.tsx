@@ -57,7 +57,7 @@ export default function About() {
             className="relative"
           >
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-white flex items-center justify-center">
-                <img src="/dist/assets/logo.png" alt="Organization logo" className="w-4/5 h-4/5 object-contain" />
+                <img src="/assets/logo.png" alt="Organization logo" className="w-4/5 h-4/5 object-contain" />
               </div>
           </motion.div>
         </div>

@@ -43,7 +43,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center space-x-3 flex-shrink-0">
-            <img src="/dist/assets/logo.png" alt="Organization logo" className="w-12 h-12 object-contain rounded-full" />
+            <img src="/assets/logo.png" alt="Organization logo" className="w-12 h-12 object-contain rounded-full" />
           </a>
 
           {/* Desktop Navigation */}
