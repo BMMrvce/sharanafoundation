@@ -6,15 +6,15 @@ export default function Donate() {
   const { language } = useLanguage();
 
   const bankDetails = [
-    { label: 'Account Name', value: 'Sri Chikkenakoppa Channaveeratata Sharanara Balaga' },
-    { label: 'Bank Name', value: 'Please contact the office for bank name' },
-    { label: 'Account Number', value: 'XXXXXXXXXXXX' },
-    { label: 'IFSC Code', value: 'XXXXXX00000' },
-    { label: 'UPI ID', value: 'sharanabalaga@upi' },
+    // { label: 'Account Name', value: 'Sri Chikkenakoppa Channaveeratata Sharanara Balaga' },
+    { label: 'Bank Name', value: 'State Bank of India,Kampli' },
+    { label: 'Account Number', value: '43861285667' },
+    { label: 'IFSC Code', value: 'SBIN0040118' },
+    { label: 'UPI ID', value: '9448145035@sbi' },
   ];
 
-  const upiPayload = 'upi://pay?pa=sharanabalaga@upi&pn=Sri Chikkenakoppa Channaveeratata Sharanara Balaga&cu=INR';
-  const upiQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=${encodeURIComponent(upiPayload)}`;
+  const upiPayload = 'upi://pay?pa=9448145035@sbi&pn=Sri%20Chikkenakoppa%20Channaveeratata%20Sharanara%20Balaga&am=0&tn=';
+  const upiQrUrl = '/assets/QRCode.png';
 
   return (
     <section id="donate" className="min-h-screen flex items-center py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#fff7f2] via-white to-[#eef6ff]">
@@ -102,7 +102,7 @@ export default function Donate() {
               viewport={{ once: true }}
               className="grid grid-cols-2 sm:grid-cols-3 gap-4"
             >
-              {[
+              {/* {[
                 { label: language === 'en' ? 'Quick scan' : 'ತ್ವರಿತ ಸ್ಕ್ಯಾನ್', value: 'UPI' },
                 { label: language === 'en' ? 'Direct transfer' : 'ನೇರ ವರ್ಗಾವಣೆ', value: 'Bank' },
                 { label: language === 'en' ? 'For camps' : 'ಶಿಬಿರಗಳಿಗೆ', value: 'Support' },
@@ -114,7 +114,7 @@ export default function Donate() {
                     <ArrowUpRight className="h-4 w-4" />
                   </div>
                 </div>
-              ))}
+              ))} */}
             </motion.div>
           </div>
         </div>

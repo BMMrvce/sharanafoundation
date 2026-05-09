@@ -5,8 +5,8 @@ export default function Donate() {
   const { language } = useLanguage();
 
   const bankDetails = [
-    { label: 'Account Name', value: 'Sri Chikkenakoppa Channaveeratata Sharanara Balaga' },
-    { label: 'Bank Name', value: 'Please contact the office for bank name' },
+    // { label: 'Account Name', value: 'Sri Chikkenakoppa Channaveeratata Sharanara Balaga' },
+    { label: 'Bank Name', value: 'State Bank of India,Kampli' },
     { label: 'Account Number', value: 'XXXXXXXXXXXX' },
     { label: 'IFSC Code', value: 'XXXXXX00000' },
     { label: 'UPI ID', value: 'sharanabalaga@upi' },
