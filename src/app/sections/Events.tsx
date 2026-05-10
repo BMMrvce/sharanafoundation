@@ -20,11 +20,11 @@ export default function Events() {
             {language === 'en' ? 'Camps & Activities' : 'ಶಿಬಿರಗಳು ಮತ್ತು ಚಟುವಟಿಕೆಗಳು'}
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#ff6b35] to-[#1e3a8a] mx-auto mb-6 sm:mb-8"></div>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          {/* <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'en'
               ? 'Updated directly from our Google Sheet by the NGO team.'
               : 'ಎನ್‌ಜಿಒ ತಂಡವು ನೇರವಾಗಿ ಗೂಗಲ್ ಶೀಟ್‌ನಿಂದ ನವೀಕರಿಸುತ್ತದೆ.'}
-          </p>
+          </p> */}
         </motion.div>
 
         {isLoading ? (

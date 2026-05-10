@@ -13,10 +13,33 @@ export default function Donate() {
     { label: 'UPI ID', value: '9448145035@sbi' },
   ];
 
-  const projectProgress = {
-    completed: 1.5,
-    needed: 2,
-    total: 3.5,
+  const donationBenefits = {
+    en: {
+      intro:
+        'Our contribution helps provide accessible and specialized eye care services to rural communities through our registered charitable trust initiatives.',
+      note:
+        'Donations are eligible for tax benefits under Section 80G of the Income Tax Act, 1961. CSR contributions are also accepted in accordance with applicable provisions of the Companies Act, 2013.',
+      compliance: [
+        { label: 'Organization Type', value: 'Registered Charitable Trust' },
+        { label: 'PAN', value: 'AATTS6904Q' },
+        { label: '12A/12AB Registration No.', value: 'AATTS6904QE20221' },
+        { label: '80G Registration No.', value: 'AATTS6904QF20231' },
+        { label: 'CSR Registration No.', value: 'CSR00093710' },
+      ],
+    },
+    kn: {
+      intro:
+        'ನಿಮ್ಮ ದೇಣಿಗೆ ನಮ್ಮ ನೋಂದಾಯಿತ ಚಾರಿಟಬಲ್ ಟ್ರಸ್ಟ್ ಮೂಲಕ ಗ್ರಾಮೀಣ ಸಮುದಾಯಗಳಿಗಾಗಿ ನಡೆಯುವ ಸೇವಾ ಆರೋಗ್ಯ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ.',
+      note:
+        'ಆದಾಯ ತೆರಿಗೆ ಕಾಯ್ದೆ, 1961 ರ ಸೆಕ್ಷನ್ 80G ಅಡಿಯಲ್ಲಿ ದೇಣಿಗೆಗಳಿಗೆ ತೆರಿಗೆ ಪ್ರಯೋಜನಗಳು ಲಭ್ಯವಿವೆ. CSR ಕೊಡುಗೆಗಳನ್ನು ಕಂಪನಿಗಳ ಕಾಯ್ದೆ, 2013 ರ ಅನುಸಾರ ಸ್ವೀಕರಿಸಲಾಗುತ್ತದೆ.',
+      compliance: [
+        { label: 'ಸಂಸ್ಥೆಯ ವಿಧ', value: 'ನೋಂದಾಯಿತ ಚಾರಿಟಬಲ್ ಟ್ರಸ್ಟ್' },
+        { label: 'PAN', value: 'AATTS6904Q' },
+        { label: '12A/12AB ನೋಂದಣಿ ಸಂಖ್ಯೆ', value: 'AATTS6904QE20221' },
+        { label: '80G ನೋಂದಣಿ ಸಂಖ್ಯೆ', value: 'AATTS6904QF20231' },
+        { label: 'CSR ನೋಂದಣಿ ಸಂಖ್ಯೆ', value: 'CSR00093710' },
+      ],
+    },
   };
 
   const upiPayload = 'upi://pay?pa=9448145035@sbi&pn=Sri%20Chikkenakoppa%20Channaveeratata%20Sharanara%20Balaga&am=0&tn=';
@@ -134,36 +157,19 @@ export default function Donate() {
 
             <div className="mt-4 pt-4 border-t border-gray-200">
               <p className="text-xs text-gray-600 mb-2 font-semibold">
-                {language === 'en' ? 'Construction Progress' : 'ನಿರ್ಮಾಣ ಪ್ರಗತಿ'}
+                {language === 'en' ? 'Trust & Compliance' : 'ದೇಣಿಗೆಯ ಪ್ರಯೋಜನಗಳು'}
               </p>
-              <div className="space-y-2">
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm text-gray-700">
-                      {language === 'en' ? 'Work Completed' : 'ಕೆಲಸ ಪೂರ್ಣ'}
-                    </span>
-                    <span className="text-sm font-semibold text-[#1e3a8a]">₹1.5 Cr</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
-                    <div className="bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full" style={{ width: `${(projectProgress.completed / projectProgress.total) * 100}%` }}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm text-gray-700">
-                      {language === 'en' ? 'Still Needed' : 'ಇನ್ನೂ ಅಗತ್ಯ'}
-                    </span>
-                    <span className="text-sm font-semibold text-[#ff6b35]">₹2 Cr</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
-                    <div className="bg-gradient-to-r from-orange-400 to-red-600 h-3 rounded-full" style={{ width: `${(projectProgress.needed / projectProgress.total) * 100}%` }}></div>
-                  </div>
-                </div>
-                <div className="mt-3 pt-3 border-t border-gray-200">
-                  <p className="text-xs text-gray-600 mb-1">
-                    {language === 'en' ? 'Total Project Cost' : 'ಒಟ್ಟು ಯೋಜನೆ ವೆಚ್ಚ'}
-                  </p>
-                  <p className="text-xl font-bold text-[#1e3a8a]">₹3.5 Cr</p>
+              <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+                <p className="font-medium text-gray-800">{language === 'en' ? donationBenefits.en.intro : donationBenefits.kn.intro}</p>
+                <p>{language === 'en' ? donationBenefits.en.note : donationBenefits.kn.note}</p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+                  {(language === 'en' ? donationBenefits.en.compliance : donationBenefits.kn.compliance).map((c) => (
+                    <div key={c.label} className="rounded-2xl border border-gray-200 bg-white p-3 shadow-sm">
+                      <div className="text-xs text-gray-500 mb-1">{c.label}</div>
+                      <div className="text-sm font-semibold text-gray-800">{c.value}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
