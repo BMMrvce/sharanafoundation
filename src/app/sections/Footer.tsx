@@ -82,7 +82,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-blue-100">
               <li>
                 {language === 'en'
-                  ? 'Kottureshwara Maternity Home, Opp: SMGJ Boys College, Kottal Road, KAMPLI - 583132, Kampli Tq. Bellary Dist. Karnataka State'
+                  ? 'Kottureshwara Maternity Home, Opp: SMGJ Boys College, Kampli Road, KAMPLI - 583132, Kampli Tq. Bellary Dist. Karnataka State'
                   : 'ಕೊಟ್ಟೂರೇಶ್ವರ ಪ್ರಸೂತಿ ಹೋಮ್, ಎಸ್.ಎಂ.ಜಿ.ಜೆ. ಬಾಯ್ಸ್ ಕಾಲೇಜ್ ಎದುರು, ಕೊತ್ತಾಲ್ ರಸ್ತೆ, ಕಂಪ್ಲಿ - 583132, ಕಂಪ್ಲಿ ತಾ. ಬಳ್ಳಾರಿ ಜಿಲ್ಲೆ. ಕರ್ನಾಟಕ ರಾಜ್ಯ'}
               </li>
             </ul>
