@@ -1,7 +1,7 @@
 
-  # Bilingual NGO Website Design
+  # Sri Chikkenakoppa Channaveeratata Sharanara Balaga (R)
 
-  This is a code bundle for Bilingual NGO Website Design. The original project is available at https://www.figma.com/design/tZX5DHyWPr1dOfjY2PJLPC/Bilingual-NGO-Website-Design.
+  This is a code bundle for Sri Chikkenakoppa Channaveeratata Sharanara Balaga (R). The original project is available at https://www.figma.com/design/tZX5DHyWPr1dOfjY2PJLPC/Bilingual-NGO-Website-Design.
 
   ## Running the code
 
