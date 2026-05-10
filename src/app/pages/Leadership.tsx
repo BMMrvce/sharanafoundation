@@ -4,6 +4,19 @@ import { Award, Heart, Users, TrendingUp } from 'lucide-react';
 export default function Leadership() {
   const { language } = useLanguage();
 
+  const leadershipStory = {
+    en: [
+      'Dr. Jambunath Gouda is the lifeline and driving force behind Sri Chikkenakoppa Channaveeratata Sharanara Balaga. As a consultant obstetrician and gynaecologist, he has continuously served the people of rural Karnataka for more than 45 years, at a time when there was little medical access or recognition for rural communities.',
+      'In 1990, moved by the suffering of villagers losing their sight to cataracts, he founded Sri Chikkenakoppa Channaveeratata Sharanara Balaga as a small trust to provide free eye treatment for the poor. What began with only a few volunteers has, under his capable leadership, grown into one of North Karnataka’s most trusted rural healthcare organisations.',
+      'Beyond medical service, Dr. Gouda is a respected social worker, mentor, and community elder. He continues to personally lead camps, train young doctors, and inspire a new generation of volunteers to serve the villages of Karnataka.',
+    ],
+    kn: [
+      'ಡಾ. ಜಂಬುನಾಥ ಗೌಡ ಅವರು ಶ್ರೀ ಚಿಕ್ಕೇನಕೊಪ್ಪ ಚನ್ನವೀರತಾತ ಶರಣರ ಬಳಗದ ಜೀವನಾಡಿ ಮತ್ತು ಪ್ರೇರಕ ಶಕ್ತಿಯಾಗಿದ್ದಾರೆ. ಪ್ರಸೂತಿ ಮತ್ತು ಸ್ತ್ರೀರೋಗ ತಜ್ಞರಾಗಿರುವ ಇವರು, ಗ್ರಾಮೀಣ ಕರ್ನಾಟಕದ ಜನತೆಗೆ ಯಾವುದೇ ವೈದ್ಯಕೀಯ ಸೌಲಭ್ಯ ಅಥವಾ ಮನ್ನಣೆ ಇಲ್ಲದ ಕಾಲದಿಂದಲೂ ಕಳೆದ 45 ವರ್ಷಗಳಿಗೂ ಹೆಚ್ಚು ಕಾಲ ನಿರಂತರವಾಗಿ ಸೇವೆ ಸಲ್ಲಿಸುತ್ತಾ ಬಂದಿದ್ದಾರೆ.',
+      '1990ರಲ್ಲಿ, ಕಣ್ಣಿನ ಪೊರೆಯಿಂದ ದೃಷ್ಟಿ ಕಳೆದುಕೊಳ್ಳುತ್ತಿದ್ದ ಹಳ್ಳಿಗರ ಸಂಕಷ್ಟವನ್ನು ಕಂಡು ಮರುಗಿದ ಇವರು, ಬಡವರಿಗೆ ಉಚಿತ ಕಣ್ಣಿನ ಚಿಕಿತ್ಸೆ ನೀಡಲು ಶ್ರೀ ಚಿಕ್ಕೇನಕೊಪ್ಪ ಚನ್ನವೀರತಾತ ಶರಣರ ಬಳಗ ಎಂಬ ಸಣ್ಣ ಟ್ರಸ್ಟ್ ಅನ್ನು ಸ್ಥಾಪಿಸಿದರು. ಕೆಲವೇ ಕೆಲವು ಸ್ವಯಂಸೇವಕರಿಂದ ಆರಂಭವಾದ ಈ ಸಂಸ್ಥೆ, ಇಂದು ಅವರ ಸಮರ್ಥ ನಾಯಕತ್ವದಲ್ಲಿ ಉತ್ತರ ಕರ್ನಾಟಕದ ಅತ್ಯಂತ ವಿಶ್ವಾಸಾರ್ಹ ಗ್ರಾಮೀಣ ಆರೋಗ್ಯ ಸಂಸ್ಥೆಯಾಗಿ ಬೆಳೆದಿದೆ.',
+      'ವೈದ್ಯಕೀಯ ಸೇವೆಯ ಜೊತೆಗೆ, ಡಾ. ಜಂಬುನಾಥ ಗೌಡ ಅವರು ಒಬ್ಬ ಗೌರವಾನ್ವಿತ ಸಮಾಜ ಸೇವಕರು, ಮಾರ್ಗದರ್ಶಕರು ಮತ್ತು ಸಮುದಾಯದ ಹಿರಿಯರಾಗಿದ್ದಾರೆ. ಇಂದಿಗೂ ಅವರು ವೈಯಕ್ತಿಕವಾಗಿ ಶಿಬಿರಗಳ ನೇತೃತ್ವ ವಹಿಸುತ್ತಾ, ಯುವ ವೈದ್ಯರಿಗೆ ತರಬೇತಿ ನೀಡುತ್ತಾ, ಕರ್ನಾಟಕದ ಹಳ್ಳಿಗಳಲ್ಲಿ ಸೇವೆ ಸಲ್ಲಿಸಲು ಹೊಸ ತಲೆಮಾರಿನ ಸ್ವಯಂಸೇವಕರಿಗೆ ಸ್ಫೂರ್ತಿಯಾಗಿದ್ದಾರೆ.',
+    ],
+  };
+
   return (
     <div className="pt-16">
       <section className="py-20 bg-gradient-to-br from-blue-900 to-slate-800 text-white">
@@ -32,11 +45,11 @@ export default function Leadership() {
             </div>
 
             <div className="prose prose-lg max-w-none mb-12">
-              <p className="text-gray-600 leading-relaxed">
-                {language === 'en'
-                  ? 'With over 45 years of dedicated service to rural healthcare, Dr. Jambunath Gouda has been the driving force behind Sharana Balaga\'s humanitarian mission. His unwavering commitment to bringing medical care to underserved communities has transformed thousands of lives.'
-                  : '45 ವರ್ಷಗಳ ಗ್ರಾಮೀಣ ಆರೋಗ್ಯ ಸೇವೆಯೊಂದಿಗೆ, ಶರಣ ಬಳಗದ ಮಾನವೀಯ ಧ್ಯೇಯದ ಹಿಂದಿನ ಪ್ರೇರಕ ಶಕ್ತಿ ಡಾ. ಜಂಬುನಾಥ ಗೌಡ.'}
-              </p>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                {(language === 'en' ? leadershipStory.en : leadershipStory.kn).map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">

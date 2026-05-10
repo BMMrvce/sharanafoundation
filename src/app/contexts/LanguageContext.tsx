@@ -43,7 +43,7 @@ const translations: Record<Language, Record<string, string>> = {
     contact: 'ಸಂಪರ್ಕ',
     donate: 'ದೇಣಿಗೆ',
     tagline: '1990 ರಿಂದ ಗ್ರಾಮೀಣ ದೃಷ್ಟಿ ಸೇವೆ',
-    heroTitle: 'ಗ್ರಾಮೀಣ ಜೀವನಕ್ಕೆ ಬೆಳಕು ತರುತ್ತಿದೆ',
+    heroTitle: 'ಗ್ರಾಮೀಣ ಜನತೆಯ ಬಾಳಿಗೆ ಆಶಾಕಿರಣ',
     heroSubtitle: '1990 ರಿಂದ ಕರ್ನಾಟಕದಾದ್ಯಂತ ಉಚಿತ ಕಣ್ಣಿನ ಪರೀಕ್ಷೆಗಳು, ಕಣ್ಣಿನ ಪೊರೆ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗಳು ಮತ್ತು ಕನ್ನಡಕ ವಿತರಣೆ',
     learnMore: 'ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ',
     yearsOfService: 'ವರ್ಷಗಳ ಸೇವೆ',

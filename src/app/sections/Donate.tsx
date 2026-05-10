@@ -93,12 +93,12 @@ export default function Donate() {
             className="rounded-3xl border border-gray-200 bg-gradient-to-br from-blue-50 to-white p-4 sm:p-6 shadow-sm"
           >
             <h3 className="text-xl sm:text-2xl font-bold text-[#1e3a8a] mb-3">
-              {language === 'en' ? 'Free Eye Hospital - Kampli' : 'ಉಚಿತ ಕಣ್ಣಿನ ರೋಗಾಲಯ - ಕಂಪಳಿ'}
+              {language === 'en' ? 'Free Eye Hospital - Kottal' : 'ಉಚಿತ ಕಣ್ಣಿನ ಆಸ್ಪತ್ರೆ - ಕೊಟ್ಟಾಲ್'}
             </h3>
             <p className="text-sm text-gray-700 mb-3">
               {language === 'en'
-                ? 'We are constructing a free eye hospital in Kampli on a donated site by Shri. Polur Satyanarayana (Son of Sri Narayanappa, Kottal). The hospital will serve rural communities with specialized eye care services.'
-                : 'ನಾವು ಕಂಪಳಿಯಲ್ಲಿ ಸೌಜನ್ಯವಾಗಿ ಕಣ್ಣಿನ ರೋಗಾಲಯ ನಿರ್ಮಿಸುತ್ತಿದ್ದೇವೆ ಶ್ರೀ. ಪೊಲೂರ್ ಸತ್ಯನಾರಾಯಣ (ಶ್ರೀ ನಾರಾಯಣಪ್ಪನ ಮಗ, ಕೋಟ್ಟಲ್) ನೀಡಿದ ಭೂಮಿಯಲ್ಲಿ. ರೋಗಾಲಯವು ಗ್ರಾಮೀಣ ಸಮುದಾಯಗಳಿಗೆ ವಿಶೇಷ ಕಣ್ಣಿನ ಸೇವೆ ಒದಗಿಸುತ್ತದೆ.'}
+                ? 'A modern, fully equipped free eye hospital is being constructed at Kottal on the site generously donated by Mr. Poluru Satyanarayana in memory of his father, Mr. Narayanappa. The project is being undertaken by Sri Chikkenakoppa Channaveeratata Sharanara Balaga to provide quality and specialized eye care services to people living in rural areas.'
+                : 'ಶ್ರೀ ಪೋಲೂರು ಸತ್ಯನಾರಾಯಣ ಅವರು ತಮ್ಮ ತಂದೆಯಾದ ಶ್ರೀ ನಾರಾಯಣಪ್ಪ ಅವರ ಸ್ಮರಣಾರ್ಥವಾಗಿ ಕೊಟ್ಟಾಲ್‌ನಲ್ಲಿ ದಾನವಾಗಿ ನೀಡಿದ ನಿವೇಶನದಲ್ಲಿ, ಶ್ರೀ ಚಿಕ್ಕೇನಕೊಪ್ಪ ಚನ್ನವೀರತಾತ ಶರಣರ ಬಳಗದ ವತಿಯಿಂದ ಆಧುನಿಕ ಸೌಲಭ್ಯಗಳನ್ನು ಒಳಗೊಂಡ ಉಚಿತ ಕಣ್ಣಿನ ಆಸ್ಪತ್ರೆಯ ನಿರ್ಮಾಣ ಕಾರ್ಯವು ವೇಗವಾಗಿ ಸಾಗುತ್ತಿದೆ. ಗ್ರಾಮೀಣ ಪ್ರದೇಶದ ಜನರಿಗೆ ಗುಣಮಟ್ಟದ ಹಾಗೂ ವಿಶೇಷ ನೇತ್ರ ಚಿಕಿತ್ಸಾ ಸೇವೆಗಳನ್ನು ಒದಗಿಸುವ ಉದ್ದೇಶದಿಂದ ಈ ಮಹತ್ವಾಕಾಂಕ್ಷಿ ಯೋಜನೆಯನ್ನು ಕೈಗೆತ್ತಿಕೊಳ್ಳಲಾಗಿದೆ.'}
             </p>
 
             <div className="space-y-2">
@@ -109,13 +109,15 @@ export default function Donate() {
                 <div className="text-gray-800 space-y-1">
                   {language === 'en' ? (
                     <>
-                      <p>• Two-floor building structure</p>
-                      <p>• Civil work in progress</p>
+                      <p>• Well-equipped two-storey hospital building</p>
+                      <p>• Advanced facilities for specialized ophthalmic treatment</p>
+                      <p>• Civil construction work is currently in progress</p>
                     </>
                   ) : (
                     <>
-                      <p>• ಎರಡು ಮಹಡಿ ಕಟ್ಟಡ ರಚನೆ</p>
-                      <p>• ನಾಗರಿಕ ಕೆಲಸ ಜಾರಿಯಲ್ಲಿ</p>
+                      <p>• ಎರಡು ಅಂತಸ್ತಿನ ಸುಸಜ್ಜಿತ ಆಸ್ಪತ್ರೆ ಕಟ್ಟಡ</p>
+                      <p>• ಆಧುನಿಕ ವೈದ್ಯಕೀಯ ಸೌಲಭ್ಯಗಳೊಂದಿಗೆ ನೇತ್ರ ಚಿಕಿತ್ಸಾ ಸೇವೆಗಳು</p>
+                      <p>• ಪ್ರಸ್ತುತ ಸಿವಿಲ್ ಕಾಮಗಾರಿ ಪ್ರಗತಿಯಲ್ಲಿದೆ</p>
                     </>
                   )}
                 </div>
@@ -125,7 +127,7 @@ export default function Donate() {
                   {language === 'en' ? 'Expected Opening' : 'ನಿರೀಕ್ಷಿತ ಉದ್ಘಾಟನೆ'}
                 </p>
                 <p className="text-gray-800 font-semibold">
-                  {language === 'en' ? 'October or November 2026' : 'ಅಕ್ಟೋಬರ್ ಅಥವಾ ನವೆಂಬರ್ 2026'}
+                  {language === 'en' ? 'October or November 2026' : '2026ರ ಅಕ್ಟೋಬರ್ ಅಥವಾ ನವೆಂಬರ್'}
                 </p>
               </div>
             </div>
