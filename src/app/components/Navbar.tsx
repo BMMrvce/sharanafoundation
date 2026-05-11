@@ -20,7 +20,7 @@ export default function Navbar() {
     setLanguage(language === 'en' ? 'kn' : 'en');
   };
 
-  const languageLabel = language === 'en' ? 'View in Kannada' : 'View in English';
+  const languageLabel = language === 'en' ? 'View in ಕನ್ನಡ' : 'View in English';
 
   const navLinks = [
     { id: 'home', label: t('home') },
