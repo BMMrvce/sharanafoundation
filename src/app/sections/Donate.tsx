@@ -21,6 +21,7 @@ export default function Donate() {
         'Donations are eligible for tax benefits under Section 80G of the Income Tax Act, 1961. CSR contributions are also accepted in accordance with applicable provisions of the Companies Act, 2013.',
       compliance: [
         { label: 'Organization Type', value: 'Registered Charitable Trust' },
+        { label: 'Registration Number', value: '59/91-92' },
         { label: 'PAN', value: 'AATTS6904Q' },
         { label: '12A/12AB Registration No.', value: 'AATTS6904QE20221' },
         { label: '80G Registration No.', value: 'AATTS6904QF20231' },
@@ -34,6 +35,7 @@ export default function Donate() {
         'ಆದಾಯ ತೆರಿಗೆ ಕಾಯ್ದೆ, 1961 ರ ಸೆಕ್ಷನ್ 80G ಅಡಿಯಲ್ಲಿ ದೇಣಿಗೆಗಳಿಗೆ ತೆರಿಗೆ ಪ್ರಯೋಜನಗಳು ಲಭ್ಯವಿವೆ. CSR ಕೊಡುಗೆಗಳನ್ನು ಕಂಪನಿಗಳ ಕಾಯ್ದೆ, 2013 ರ ಅನುಸಾರ ಸ್ವೀಕರಿಸಲಾಗುತ್ತದೆ.',
       compliance: [
         { label: 'ಸಂಸ್ಥೆಯ ವಿಧ', value: 'ನೋಂದಾಯಿತ ಚಾರಿಟಬಲ್ ಟ್ರಸ್ಟ್' },
+        { label: 'ನೋಂದಣಿ ಸಂಖ್ಯೆ', value: '59/91-92' },
         { label: 'PAN', value: 'AATTS6904Q' },
         { label: '12A/12AB ನೋಂದಣಿ ಸಂಖ್ಯೆ', value: 'AATTS6904QE20221' },
         { label: '80G ನೋಂದಣಿ ಸಂಖ್ಯೆ', value: 'AATTS6904QF20231' },
