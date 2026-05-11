@@ -7,7 +7,7 @@ function normalizeStatus(value?: string): ActivityStatus {
   const normalized = value.trim().toLowerCase();
   if (normalized === 'upcoming') return 'Upcoming';
   if (normalized === 'ongoing') return 'Ongoing';
-  if (normalized === 'completed') return 'Completed';
+  if (normalized === 'completed' || normalized === 'done' || normalized === 'finished') return 'Completed';
   return 'Upcoming';
 }
 

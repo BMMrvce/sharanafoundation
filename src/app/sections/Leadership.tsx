@@ -128,6 +128,50 @@ export default function Leadership() {
             </div>
           </div>
         </motion.div>
+
+        {/* Committee Members Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 sm:mt-20 lg:mt-24"
+        >
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl font-bold text-[#1e3a8a] mb-3">
+              {language === 'en' ? 'Our Board of Directors and Advisers' : 'ನಮ್ಮ ನಿರ್ದೇಶಕರ ಮಂಡಳಿ ಮತ್ತು ಸಲಹೆಗಾರರು'}
+            </h3>
+            <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
+              {language === 'en'
+                ? 'Visionary leaders and experienced advisers guiding our mission for rural healthcare excellence'
+                : 'ಗ್ರಾಮೀಣ ಆರೋಗ್ಯಸೇವೆಯ ಶ್ರೇಷ್ಠತೆಗಾಗಿ ನಮ್ಮ ಧ್ಯೇಯವನ್ನು ದಿಕ್ಸೂಚಿ ನೀಡುತ್ತಿರುವ ದೂರದರ್ಶಿ ನಾಯಕರು ಮತ್ತು ಅನುಭವಿ ಸಲಹೆಗಾರರು'}
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative group">
+              {/* Outer decorative border with gradient shadow */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#ff6b35] via-[#1e3a8a] to-[#ff6b35] rounded-3xl opacity-20 group-hover:opacity-40 blur transition duration-300"></div>
+              
+              {/* Main container with attractive styling */}
+              <div className="relative bg-white rounded-3xl border-4 border-[#1e3a8a] overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.02]">
+                {/* Image container with inner shadow border */}
+                <div className="p-2 bg-gradient-to-br from-[#ff6b35] to-[#1e3a8a]">
+                  <div className="bg-white rounded-2xl overflow-hidden">
+                    <img
+                      src="/assets/committee-members.png"
+                      alt={language === 'en' ? 'Committee Members' : 'ಸಮಿತಿ ಸದಸ್ಯರು'}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Decorative elements */}
+                <div className="absolute top-4 right-4 w-12 h-12 border-2 border-[#ff6b35] rounded-full opacity-30"></div>
+                <div className="absolute bottom-4 left-4 w-8 h-8 border-2 border-[#1e3a8a] rounded-full opacity-30"></div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
