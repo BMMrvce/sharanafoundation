@@ -42,11 +42,11 @@ export default function About() {
                 ? 'Founded in 1990, Sri Chikkenakoppa Channaveeratata Sharanara Balaga (R) emerged from a vision to ensure no one in rural Karnataka suffers from preventable blindness. We have conducted more than 25 eye camps in and around Kampli, Hampi, Kamalapur, Hospet, and Gangavathi. Over three decades, we have conducted 25 eye camps, performed thousands of surgeries, and distributed spectacles to those in need.'
                 : '1990 ರಲ್ಲಿ ಸ್ಥಾಪಿತವಾದ ಶ್ರೀ ಚಿಕ್ಕೆನಕೊಪ್ಪದ ಚನ್ನವೀರತಾತ ಶರಣರ ಬಳಗ (ರಿ), ಕರ್ನಾಟಕದ ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಲ್ಲಿ ತಡೆಯಬಹುದಾದ ಕುರುಡುತನದಿಂದ ಯಾರೂ ಬಳಲುವುದಿಲ್ಲ ಎಂದು ಖಚಿತಪಡಿಸುವ ದೃಷ್ಟಿಯಿಂದ ಹುಟ್ಟಿಕೊಂಡಿತು. ನಾವು ಕಂಪ್ಲಿ, ಹಂಪಿ, ಕಮಲಾಪುರ, ಹೊಸಪೇಟೆ ಮತ್ತು ಗಂಗಾವತಿ ಸುತ್ತಮುತ್ತ 25ಕ್ಕೂ ಹೆಚ್ಚು ಕಣ್ಣಿನ ಶಿಬಿರಗಳನ್ನು ನಡೆಸಿದ್ದೇವೆ. ಮೂರು ದಶಕಗಳಲ್ಲಿ, ನಾವು 25 ಕಣ್ಣಿನ ಶಿಬಿರಗಳನ್ನು ನಡೆಸಿದ್ದೇವೆ, ಸಾವಿರಾರು ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗಳನ್ನು ಮಾಡಿದ್ದೇವೆ ಮತ್ತು ಅಗತ್ಯವಿರುವವರಿಗೆ ಕನ್ನಡಕಗಳನ್ನು ವಿತರಿಸಿದ್ದೇವೆ.'}
             </p>
-            <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
+            {/* <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
               {language === 'en'
                 ? 'What began as a small initiative has grown into a comprehensive eye care program serving hundreds of communities across Karnataka, driven by compassion and unwavering commitment to social service.'
                 : 'ಮೂರು ದಶಕಗಳಲ್ಲಿ, ನಾವು 25 ಕಣ್ಣಿನ ಶಿಬಿರಗಳನ್ನು ನಡೆಸಿದ್ದೇವೆ, ಸಾವಿರಾರು ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗಳನ್ನು ಮಾಡಿದ್ದೇವೆ ಮತ್ತು ಅಗತ್ಯವಿರುವವರಿಗೆ ಕನ್ನಡಕಗಳನ್ನು ವಿತರಿಸಿದ್ದೇವೆ.'}
-            </p>
+            </p> */}
           </motion.div>
 
           <motion.div
