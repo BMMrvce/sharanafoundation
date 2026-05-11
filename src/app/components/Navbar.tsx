@@ -20,6 +20,8 @@ export default function Navbar() {
     setLanguage(language === 'en' ? 'kn' : 'en');
   };
 
+  const languageLabel = language === 'en' ? 'View in Kannada' : 'View in English';
+
   const navLinks = [
     { id: 'home', label: t('home') },
     { id: 'about', label: t('about') },
@@ -62,12 +64,12 @@ export default function Navbar() {
             <button
               type="button"
               onClick={toggleLanguage}
-              className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
               aria-label="Switch language"
             >
               <Globe className="w-4 h-4 text-gray-700" />
               <span className="text-sm font-medium text-gray-700">
-                {language === 'en' ? 'ಕನ್ನಡ' : 'ENG'}
+                {languageLabel}
               </span>
             </button>
 
@@ -85,10 +87,13 @@ export default function Navbar() {
             <button
               type="button"
               onClick={toggleLanguage}
-              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
               aria-label="Switch language"
             >
               <Globe className="w-5 h-5 text-gray-700" />
+              <span className="text-xs font-medium text-gray-700 sm:text-sm">
+                {languageLabel}
+              </span>
             </button>
 
             <button

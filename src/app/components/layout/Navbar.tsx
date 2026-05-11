@@ -9,6 +9,8 @@ export default function Navbar() {
     setLanguage(language === 'en' ? 'kn' : 'en');
   };
 
+  const languageLabel = language === 'en' ? 'View in Kannada' : 'View in English';
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,10 +53,10 @@ export default function Navbar() {
 
             <button
               onClick={toggleLanguage}
-              className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100"
+              className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100 whitespace-nowrap"
             >
               <Globe className="w-4 h-4" />
-              <span className="text-sm font-medium">{language === 'en' ? 'ಕನ್ನಡ' : 'ENG'}</span>
+              <span className="text-sm font-medium">{languageLabel}</span>
             </button>
 
             <Link

@@ -122,8 +122,8 @@ export default function Donate() {
             </h3>
             <p className="text-sm text-gray-700 mb-3">
               {language === 'en'
-                ? 'A modern, fully equipped free eye hospital is being constructed at Kampli on the site generously donated by Mr. Poluru Satyanarayana in memory of his father, Mr. Narayanappa. The project is being undertaken by Sri Chikkenakoppa Channaveeratata Sharanara Balaga to provide quality and specialized eye care services to people living in rural areas.'
-                : 'ಶ್ರೀ ಪೋಲೂರು ಸತ್ಯನಾರಾಯಣ ಅವರು ತಮ್ಮ ತಂದೆಯಾದ ಶ್ರೀ ನಾರಾಯಣಪ್ಪ ಅವರ ಸ್ಮರಣಾರ್ಥವಾಗಿ ಕಂಪ್ಲಿಯಲ್ಲಿ ದಾನವಾಗಿ ನೀಡಿದ ನಿವೇಶನದಲ್ಲಿ, ಶ್ರೀ ಚಿಕ್ಕೇನಕೊಪ್ಪ ಚನ್ನವೀರತಾತ ಶರಣರ ಬಳಗದ ವತಿಯಿಂದ ಆಧುನಿಕ ಸೌಲಭ್ಯಗಳನ್ನು ಒಳಗೊಂಡ ಉಚಿತ ಕಣ್ಣಿನ ಆಸ್ಪತ್ರೆಯ ನಿರ್ಮಾಣ ಕಾರ್ಯವು ವೇಗವಾಗಿ ಸಾಗುತ್ತಿದೆ. ಗ್ರಾಮೀಣ ಪ್ರದೇಶದ ಜನರಿಗೆ ಗುಣಮಟ್ಟದ ಹಾಗೂ ವಿಶೇಷ ನೇತ್ರ ಚಿಕಿತ್ಸಾ ಸೇವೆಗಳನ್ನು ಒದಗಿಸುವ ಉದ್ದೇಶದಿಂದ ಈ ಮಹತ್ವಾಕಾಂಕ್ಷಿ ಯೋಜನೆಯನ್ನು ಕೈಗೆತ್ತಿಕೊಳ್ಳಲಾಗಿದೆ.'}
+                ? 'We are constructing our own free eye hospital in Kampli on the site donated by Polur Satyanarayana, son of Sri Narayanappa of Kottal. Civil work is under progress for this two-storey building. Around Rs. 1.5 crore work has already been completed, and we need another Rs. 2 crore to complete the hospital. The expected opening ceremony is planned for October or November 2026.'
+                : 'ಕೋಟ್ಟಾಳದ ಶ್ರೀ ನಾರಾಯಣಪ್ಪ ಅವರ ಪುತ್ರ ಶ್ರೀ ಪೋಲುರ್ ಸತ್ಯನಾರಾಯಣ ಅವರು ದಾನವಾಗಿ ನೀಡಿದ ಸ್ಥಳದಲ್ಲಿ ಕಂಪ್ಲಿಯಲ್ಲಿ ನಮ್ಮದೇ ಆದ ಉಚಿತ ಕಣ್ಣಿನ ಆಸ್ಪತ್ರೆಯನ್ನು ನಿರ್ಮಿಸುತ್ತಿದ್ದೇವೆ. ಎರಡು ಅಂತಸ್ತಿನ ಈ ಕಟ್ಟಡದ ಸಿವಿಲ್ ಕಾಮಗಾರಿ ಪ್ರಗತಿಯಲ್ಲಿದೆ. ಈಗಾಗಲೇ ಸುಮಾರು 1.5 ಕೋಟಿ ರೂ. ಕೆಲಸ ಪೂರ್ಣಗೊಂಡಿದ್ದು, ಆಸ್ಪತ್ರೆಯ ನಿರ್ಮಾಣ ಪೂರ್ಣಗೊಳಿಸಲು ಇನ್ನೂ 2 ಕೋಟಿ ರೂ. ಅಗತ್ಯವಿದೆ. ಆಸ್ಪತ್ರೆಯ ಉದ್ಘಾಟನಾ ಸಮಾರಂಭವು 2026ರ ಅಕ್ಟೋಬರ್ ಅಥವಾ ನವೆಂಬರ್ ತಿಂಗಳಲ್ಲಿ ನಡೆಯುವ ನಿರೀಕ್ಷೆಯಿದೆ.'}
             </p>
 
             <div className="space-y-2">
@@ -134,15 +134,17 @@ export default function Donate() {
                 <div className="text-gray-800 space-y-1">
                   {language === 'en' ? (
                     <>
-                      <p>• Well-equipped two-storey hospital building</p>
-                      <p>• Advanced facilities for specialized ophthalmic treatment</p>
-                      <p>• Civil construction work is currently in progress</p>
+                      <p>• Two-storey free eye hospital building</p>
+                      <p>• Civil work is currently in progress</p>
+                      <p>• Around Rs. 1.5 crore work completed so far</p>
+                      <p>• Another Rs. 2 crore required for completion</p>
                     </>
                   ) : (
                     <>
-                      <p>• ಎರಡು ಅಂತಸ್ತಿನ ಸುಸಜ್ಜಿತ ಆಸ್ಪತ್ರೆ ಕಟ್ಟಡ</p>
-                      <p>• ಆಧುನಿಕ ವೈದ್ಯಕೀಯ ಸೌಲಭ್ಯಗಳೊಂದಿಗೆ ನೇತ್ರ ಚಿಕಿತ್ಸಾ ಸೇವೆಗಳು</p>
+                      <p>• ಎರಡು ಅಂತಸ್ತಿನ ಉಚಿತ ಕಣ್ಣಿನ ಆಸ್ಪತ್ರೆ ಕಟ್ಟಡ</p>
                       <p>• ಪ್ರಸ್ತುತ ಸಿವಿಲ್ ಕಾಮಗಾರಿ ಪ್ರಗತಿಯಲ್ಲಿದೆ</p>
+                      <p>• ಈಗಾಗಲೇ ಸುಮಾರು 1.5 ಕೋಟಿ ರೂ. ಕೆಲಸ ಪೂರ್ಣಗೊಂಡಿದೆ</p>
+                      <p>• ಪೂರ್ಣಗೊಳಿಸಲು ಇನ್ನೂ 2 ಕೋಟಿ ರೂ. ಅಗತ್ಯವಿದೆ</p>
                     </>
                   )}
                 </div>
