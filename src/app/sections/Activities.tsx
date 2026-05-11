@@ -115,8 +115,8 @@ export default function Activities() {
                 </p>
                 <p>
                   {language === 'en'
-                    ? 'During eye camps, we give saris to all operated female patients, female attenders, and female volunteers as a mark of muttaiyederige udi tumbuva karya.'
-                    : 'ಕಣ್ಣಿನ ಶಿಬಿರಗಳ ಸಂದರ್ಭದಲ್ಲಿ, ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗೊಂಡ ಮಹಿಳಾ ರೋಗಿಗಳು, ಮಹಿಳಾ ಜೊತೆಯಲ್ಲಿರುವವರು ಮತ್ತು ಮಹಿಳಾ ಸ್ವಯಂಸೇವಕರಿಗೆ ಮುತ್ತೈದೆಯರಿಗೆ ಉಡಿ ತುಂಬುವ ಕಾರ್ಯದ ಅಂಗವಾಗಿ ಸೀರೆಗಳನ್ನು ನೀಡುತ್ತೇವೆ.'}
+                    ? 'During our eye camps, we present saris to all operated female patients, female attenders, and female volunteers as part of the muttaiyederige udi tumbuva karya.'
+                    : 'ನಮ್ಮ ಕಣ್ಣಿನ ಶಿಬಿರಗಳ ಸಂದರ್ಭದಲ್ಲಿ, ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗೊಂಡ ಎಲ್ಲಾ ಮಹಿಳಾ ರೋಗಿಗಳು, ಮಹಿಳಾ ಜೊತೆಯಲ್ಲಿರುವವರು ಮತ್ತು ಮಹಿಳಾ ಸ್ವಯಂಸೇವಕರಿಗೆ ಮುತ್ತೈದೆಯರಿಗೆ ಉಡಿ ತುಂಬುವ ಕಾರ್ಯದ ಅಂಗವಾಗಿ ಸೀರೆಗಳನ್ನು ನೀಡುತ್ತೇವೆ.'}
                 </p>
               </div>
             </div>
