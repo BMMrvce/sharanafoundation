@@ -116,7 +116,7 @@ export default function Donate() {
             className="rounded-3xl border border-gray-200 bg-gradient-to-br from-blue-50 to-white p-4 sm:p-6 shadow-sm"
           >
             <h3 className="text-xl sm:text-2xl font-bold text-[#1e3a8a] mb-3">
-              {language === 'en' ? 'Free Eye Hospital - Kampli' : 'ಉಚಿತ ಕಣ್ಣಿನ ಆಸ್ಪತ್ರೆ - ಕೊಟ್ಟಾಲ್'}
+              {language === 'en' ? 'Free Eye Hospital - Kampli' : 'ಉಚಿತ ಕಣ್ಣಿನ ಆಸ್ಪತ್ರೆ - ಕಂಪ್ಲಿ'}
             </h3>
             <p className="text-sm text-gray-700 mb-3">
               {language === 'en'
