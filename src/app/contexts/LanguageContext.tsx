@@ -22,7 +22,7 @@ const translations: Record<Language, Record<string, string>> = {
     contact: 'Contact',
     donate: 'Donate',
     tagline: 'Serving Rural Vision Since 1990',
-    heroTitle: 'Bringing Light to Rural Lives',
+    heroTitle: 'Bringing Sight to Rural Communities',
     heroSubtitle: 'Free eye checkups, cataract surgeries, and spectacles distribution across Karnataka since 1990',
     learnMore: 'Learn More',
     yearsOfService: 'Years of Service',

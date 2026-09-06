@@ -32,7 +32,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image Slideshow */}
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
@@ -55,7 +55,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/70 via-[#2563eb]/65 to-[#3b82f6]/40"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div className="text-center">
           {/* Official Name */}
           <motion.div
@@ -64,11 +64,16 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="mb-6 sm:mb-8"
           >
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight px-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight px-4" style={{ color: '#FF9933' }}>
               {language === 'en'
                 ? 'Sri Chikkenakoppa Channaveeratata Sharanara Balaga (R)'
                 : 'ಶ್ರೀ ಚಿಕ್ಕೆನಕೊಪ್ಪದ ಚನ್ನವೀರತಾತ ಶರಣರ ಬಳಗ (ರಿ)'}
             </h1>
+            <p className="text-sm sm:text-base md:text-lg text-white/80 font-bold mb-3 px-4">
+              KAMPLI – 583132
+              <br />
+              (a Charitable Trust regd. under Society act 1960 G.O.K)
+            </p>
             <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-white/20 backdrop-blur-sm rounded-full">
               <p className="text-base sm:text-lg md:text-xl text-white/90 font-medium">
                 {t('tagline')}
@@ -83,7 +88,7 @@ export default function Hero() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="max-w-4xl mx-auto px-4"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight">
               {t('heroTitle')}
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto">
