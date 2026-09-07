@@ -1,28 +1,16 @@
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'motion/react';
 import { Eye, Heart, Users, MapPin } from 'lucide-react';
+import { useNavigate } from 'react-router';
+import Hero from '../sections/Hero';
 
 export default function Home() {
   const { t, language } = useLanguage();
+  const navigate = useNavigate();
 
   return (
-    <div className="pt-16">
-      {/* Hero Section */}
-      <section className="relative h-[600px] overflow-hidden bg-gradient-to-r from-blue-900 to-blue-700">
-        <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-2xl text-white"
-          >
-            <h1 className="text-5xl font-bold mb-6">{t('heroTitle')}</h1>
-            <p className="text-xl mb-8 text-blue-100">{t('heroSubtitle')}</p>
-            <button className="px-8 py-4 bg-white text-blue-900 rounded-full font-medium hover:bg-blue-50">
-              {t('learnMore')}
-            </button>
-          </motion.div>
-        </div>
-      </section>
+    <div>
+      <Hero />
 
       {/* Impact Counters */}
       <section className="py-16 bg-gradient-to-br from-blue-50 to-green-50">
@@ -83,7 +71,10 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">{t('donateTitle')}</h2>
           <p className="text-xl mb-8 text-orange-50">{t('donateSubtitle')}</p>
-          <button className="px-10 py-5 bg-white text-orange-600 rounded-full font-bold hover:bg-orange-50">
+          <button
+            onClick={() => navigate('/donate')}
+            className="px-10 py-5 bg-white text-orange-600 rounded-full font-bold hover:bg-orange-50"
+          >
             {t('donate')}
           </button>
         </div>

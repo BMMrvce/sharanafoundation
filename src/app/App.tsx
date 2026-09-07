@@ -1,10 +1,11 @@
+import { RouterProvider } from 'react-router';
 import { LanguageProvider } from './contexts/LanguageContext';
-import SinglePageApp from './pages/SinglePageApp';
+import { router } from './routes';
 
 export default function App() {
   return (
     <LanguageProvider>
-      <SinglePageApp />
+      <RouterProvider router={router} />
     </LanguageProvider>
   );
 }

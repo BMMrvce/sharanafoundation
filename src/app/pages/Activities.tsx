@@ -30,6 +30,73 @@ export default function Activities() {
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-16">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#1e3a8a] mb-2">Activity & Impact</h2>
+              <p className="text-sm text-gray-500 italic">(from Eye care & Eye Healing)</p>
+              <div className="w-20 h-1 bg-gradient-to-r from-[#ff6b35] to-[#1e3a8a] mx-auto mt-4"></div>
+            </div>
+
+            {/* Area Outreach */}
+            <div className="grid sm:grid-cols-2 gap-6 mb-8">
+              <div className="rounded-2xl bg-gradient-to-br from-blue-50 to-slate-50 border border-blue-100 p-6 shadow-sm">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#1e3a8a] mb-2">
+                  Towns / Pattana Panchayat
+                </p>
+                <p className="text-gray-700 leading-relaxed">Kampli, Gangavathi, Hosapete, Kamalapur</p>
+              </div>
+              <div className="rounded-2xl bg-gradient-to-br from-orange-50 to-slate-50 border border-orange-100 p-6 shadow-sm">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#ff6b35] mb-2">
+                  Villages & Camps
+                </p>
+                <p className="text-3xl font-bold text-gray-900">50+</p>
+              </div>
+            </div>
+
+            {/* Awareness Programmes & Camps */}
+            <div className="rounded-2xl border border-gray-100 shadow-sm overflow-hidden mb-8">
+              <div className="bg-[#1e3a8a] px-6 py-4">
+                <h3 className="text-white font-bold text-lg">Awareness Programmes & Camps</h3>
+              </div>
+              <div className="divide-y divide-gray-100">
+                {[
+                  { label: 'Eye care', value: 'Every Year' },
+                  { label: 'Deworming', value: "Every Year on Independence Day for children of Govt schools" },
+                  { label: 'Hepatitis B', value: '09' },
+                  { label: 'Cancer Detection', value: '03' },
+                  { label: 'Dental Awareness', value: '05' },
+                  { label: 'Eye Camp', value: '25 (now discontinued since 2023 due to Govt regulations)' },
+                  { label: "Cataract Surgery's", value: '10,000' },
+                ].map((row) => (
+                  <div
+                    key={row.label}
+                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 px-6 py-3"
+                  >
+                    <span className="font-semibold text-gray-900">{row.label}</span>
+                    <span className="text-gray-600 sm:text-right">{row.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-4 mb-8">
+              <div className="rounded-2xl bg-white/80 border border-amber-100 p-4 sm:p-5 shadow-sm">
+                <p className="font-semibold text-[#1e3a8a] mb-2">Free Tubectomy</p>
+                <p className="text-gray-700 leading-relaxed">
+                  On the 50th year of India's independence (1997) the sangha conducted a free Tubectomy camp
+                  and more than 100 patients availed the facility.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-white/80 border border-amber-100 p-4 sm:p-5 shadow-sm">
+                <p className="font-semibold text-[#1e3a8a] mb-2">Polio & Triple Antigen</p>
+                <p className="text-gray-700 leading-relaxed">
+                  Since inception, the dose was given every month to new-born children, but this has now been
+                  discontinued due to Govt regulations.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="mb-12 rounded-3xl bg-gradient-to-br from-amber-50 via-white to-orange-50 border border-amber-100 p-6 sm:p-8 shadow-sm">
             <div className="max-w-4xl">
               <p className="inline-flex items-center rounded-full bg-[#1e3a8a] px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white mb-4">
@@ -58,8 +125,8 @@ export default function Activities() {
                   </div>
                   <p>
                     {language === 'en'
-                      ? 'We provide free medicine, spectacles, and food to all operated patients, and free food for attenders until the patient is discharged.'
-                      : 'ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗೊಂಡ ಎಲ್ಲಾ ರೋಗಿಗಳಿಗೆ ಉಚಿತ ಔಷಧಿ, ಕನ್ನಡಕ ಮತ್ತು ಆಹಾರವನ್ನು ನೀಡುತ್ತೇವೆ; ರೋಗಿ ಬಿಡುಗಡೆಯಾಗುವವರೆಗೆ ಜೊತೆಯಲ್ಲಿರುವವರಿಗೆ ಕೂಡ ಉಚಿತ ಆಹಾರ ಒದಗಿಸುತ್ತೇವೆ.'}
+                      ? 'We provide free food, accommodation, medicine, and spectacles for all cataract surgery patients along with their attenders until the patient is discharged.'
+                      : 'ಎಲ್ಲಾ ಕಣ್ಣಿನ ಪೊರೆ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಗೊಂಡ ರೋಗಿಗಳಿಗೆ ಮತ್ತು ಅವರ ಜೊತೆಯಲ್ಲಿರುವವರಿಗೆ ರೋಗಿ ಬಿಡುಗಡೆಯಾಗುವವರೆಗೆ ಉಚಿತ ಆಹಾರ, ವಸತಿ, ಔಷಧಿ ಮತ್ತು ಕನ್ನಡಕವನ್ನು ಒದಗಿಸುತ್ತೇವೆ.'}
                   </p>
                 </div>
 

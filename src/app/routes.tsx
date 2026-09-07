@@ -5,7 +5,6 @@ import About from './pages/About';
 import Activities from './pages/Activities';
 import Leadership from './pages/Leadership';
 import Gallery from './pages/Gallery';
-import Impact from './pages/Impact';
 import Events from './pages/Events';
 import Donate from './pages/Donate';
 import Contact from './pages/Contact';
@@ -20,7 +19,6 @@ export const router = createBrowserRouter([
       { path: 'activities', Component: Activities },
       { path: 'leadership', Component: Leadership },
       { path: 'gallery', Component: Gallery },
-      { path: 'impact', Component: Impact },
       { path: 'events', Component: Events },
       { path: 'donate', Component: Donate },
       { path: 'contact', Component: Contact },

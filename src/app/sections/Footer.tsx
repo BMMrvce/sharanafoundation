@@ -61,7 +61,7 @@ export default function Footer() {
               {language === 'en' ? 'Quick Links' : 'ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು'}
             </h3>
             <ul className="space-y-2">
-              {['home', 'about', 'activities', 'leadership', 'impact', 'gallery', 'events', 'contact'].map((link) => (
+              {['home', 'about', 'activities', 'leadership', 'gallery', 'events', 'contact'].map((link) => (
                 <li key={link}>
                   <button
                     onClick={() => scrollToSection(link)}

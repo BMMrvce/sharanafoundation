@@ -1,21 +1,15 @@
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import ImageZoomModal from '../components/figma/ImageZoomModal';
 import { galleryImages } from '../../generated/live-assets';
 
 export default function Gallery() {
   const { language } = useLanguage();
-  const [currentPage, setCurrentPage] = useState(0);
-  const [currentMobileImage, setCurrentMobileImage] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const chunk = (arr: string[], size: number) => {
-    const out: string[][] = [];
-    for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
-    return out;
-  };
 
   const galleryImageList = galleryImages.length ? galleryImages : [
     '/assets/gallery/gallery1.jpg',
@@ -28,36 +22,21 @@ export default function Gallery() {
     '/assets/gallery/gallery8.jpg',
   ];
 
-  const galleryPages = chunk(galleryImageList, 8);
-
-  useEffect(() => {
-    const updateIsMobile = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-
-    updateIsMobile();
-    window.addEventListener('resize', updateIsMobile);
-
-    return () => window.removeEventListener('resize', updateIsMobile);
-  }, []);
-
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentPage((prev) => (prev + 1) % galleryPages.length);
-    }, 10000); // Change every 10 seconds
+      setCurrentImage((prev) => (prev + 1) % galleryImageList.length);
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [galleryPages.length]);
+  }, [galleryImageList.length]);
 
-  useEffect(() => {
-    if (!isMobile) return;
+  const goToPrevious = () => {
+    setCurrentImage((prev) => (prev - 1 + galleryImageList.length) % galleryImageList.length);
+  };
 
-    const interval = setInterval(() => {
-      setCurrentMobileImage((prev) => (prev + 1) % galleryImageList.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [isMobile, galleryImageList.length]);
+  const goToNext = () => {
+    setCurrentImage((prev) => (prev + 1) % galleryImageList.length);
+  };
 
   return (
     <section id="gallery" className="min-h-screen flex items-center py-16 sm:py-20 lg:py-24 bg-white">
@@ -79,90 +58,42 @@ export default function Gallery() {
           </p>
         </motion.div>
 
-        <div className="relative max-w-6xl mx-auto w-full">
-          {isMobile ? (
-            <div className="w-full max-w-md mx-auto">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentMobileImage}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.5 }}
-                  className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl cursor-zoom-in"
-                  onClick={() => setSelectedImage(galleryImageList[currentMobileImage])}
-                >
-                  <ImageWithFallback
-                    src={galleryImageList[currentMobileImage]}
-                    alt={`Gallery image ${currentMobileImage + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-              </AnimatePresence>
+        <div className="relative max-w-2xl mx-auto w-full">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentImage}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.5 }}
+              className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl cursor-zoom-in"
+              onClick={() => setSelectedImage(galleryImageList[currentImage])}
+            >
+              <ImageWithFallback
+                src={galleryImageList[currentImage]}
+                alt={`Gallery image ${currentImage + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </AnimatePresence>
 
-              <div className="flex justify-center gap-2 mt-5">
-                {galleryImageList.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentMobileImage(index)}
-                    className={`h-2 rounded-full transition-all ${
-                      currentMobileImage === index ? 'w-8 bg-[#ff6b35]' : 'w-2 bg-gray-300'
-                    }`}
-                    aria-label={`Go to image ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          ) : (
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentPage}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.8 }}
-                className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 w-full"
-              >
-                {galleryPages[currentPage].map((image, index) => (
-                  <motion.div
-                    key={`${currentPage}-${index}`}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: index * 0.05, duration: 0.4 }}
-                    className="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:scale-105 cursor-zoom-in"
-                    onClick={() => setSelectedImage(image)}
-                  >
-                    <ImageWithFallback
-                      src={image}
-                      alt={`Gallery image ${currentPage * 8 + index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
-          )}
+          <button
+            onClick={goToPrevious}
+            className="absolute left-2 sm:-left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-6 h-6 text-[#1e3a8a]" />
+          </button>
+          <button
+            onClick={goToNext}
+            className="absolute right-2 sm:-right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110"
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-6 h-6 text-[#1e3a8a]" />
+          </button>
 
           {selectedImage ? (
             <ImageZoomModal src={selectedImage} alt="Gallery image" onClose={() => setSelectedImage(null)} />
-          ) : null}
-
-          {/* Page Indicators */}
-          {!isMobile ? (
-            <div className="flex justify-center gap-3 mt-8 sm:mt-12">
-              {galleryPages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentPage(index)}
-                  className={`h-2.5 rounded-full transition-all ${
-                    currentPage === index
-                      ? 'w-12 bg-[#ff6b35]'
-                      : 'w-2.5 bg-gray-300 hover:bg-gray-400'
-                  }`}
-                  aria-label={`Go to page ${index + 1}`}
-                />
-              ))}
-            </div>
           ) : null}
         </div>
       </div>

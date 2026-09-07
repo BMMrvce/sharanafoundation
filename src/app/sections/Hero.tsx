@@ -2,11 +2,13 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { heroImages } from '../../generated/live-assets';
 
 export default function Hero() {
   const { language, t } = useLanguage();
+  const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -16,20 +18,6 @@ export default function Hero() {
 
     return () => clearInterval(interval);
   }, [heroImages.length]);
-
-  const scrollToAbout = () => {
-    const element = document.getElementById('about');
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -98,17 +86,14 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
-                onClick={scrollToAbout}
+                onClick={() => navigate('/about')}
                 className="w-full sm:w-auto px-8 py-4 bg-white text-[#1e3a8a] rounded-full font-semibold hover:bg-blue-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105 flex items-center justify-center space-x-2"
               >
-                <span>{t('learnMore')}</span>
+                <span>{t('aboutUsCta')}</span>
                 <ArrowDown className="w-5 h-5" />
               </button>
               <button
-                onClick={() => {
-                  const element = document.getElementById('donate');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
-                }}
+                onClick={() => navigate('/donate')}
                 className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#ff6b35] to-[#ff8c42] text-white rounded-full font-semibold hover:shadow-xl transition-all hover:scale-105"
               >
                 {t('donate')}
