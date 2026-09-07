@@ -1,3 +1,8 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+/* Global UI scale: render the whole site at 88% (12% smaller). */
+html {
+  zoom: 0.88;
+}

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'motion/react';
 import { MapPin, Briefcase, Calendar } from 'lucide-react';
@@ -80,8 +81,71 @@ const managingCommittee = [
   },
 ];
 
+type CommitteeMember = (typeof managingCommittee)[number];
+
+function MemberCard({ member }: { member: CommitteeMember }) {
+  return (
+    <div className="group relative h-full">
+      {/* Glow border on hover */}
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#ff6b35] to-[#1e3a8a] rounded-3xl opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
+
+      <div className="relative h-full bg-white rounded-3xl shadow-lg group-hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col items-center text-center group-hover:-translate-y-1">
+        {/* Header gradient banner */}
+        <div className="w-full h-20 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] relative">
+          <div className="absolute -bottom-16 left-1/2 -translate-x-1/2">
+            <div className="w-32 h-32 rounded-full overflow-hidden ring-4 ring-white shadow-xl bg-gradient-to-br from-blue-100 to-orange-100">
+              <ImageWithFallback
+                src={member.image}
+                alt={member.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full px-6 pt-20 pb-6 flex flex-col items-center">
+          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide text-white bg-gradient-to-r from-[#ff6b35] to-[#ff8c42] mb-3 shadow-sm">
+            {member.designation}
+          </span>
+          <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
+          <p className="flex items-center gap-1 text-sm text-gray-500 mb-4">
+            <MapPin className="w-3.5 h-3.5 text-[#1e3a8a]" />
+            {member.place}
+          </p>
+
+          <div className="w-full pt-4 border-t border-gray-100 space-y-2.5 text-left">
+            <p className="flex items-center gap-2 text-sm text-gray-600">
+              <Calendar className="w-4 h-4 text-[#ff6b35] flex-shrink-0" />
+              <span>
+                <span className="font-semibold text-gray-900">Age:</span> {member.age}
+              </span>
+            </p>
+            <p className="flex items-start gap-2 text-sm text-gray-600">
+              <Briefcase className="w-4 h-4 text-[#ff6b35] flex-shrink-0 mt-0.5" />
+              <span>
+                <span className="font-semibold text-gray-900">Profession:</span>{' '}
+                {member.profession}
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function About() {
   const { language } = useLanguage();
+
+  const [activeMember, setActiveMember] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveMember((prev) => (prev + 1) % managingCommittee.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="pt-16 min-h-screen">
@@ -150,7 +214,37 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          {/* Small screens: auto-sliding carousel */}
+          <div className="sm:hidden">
+            <div className="overflow-hidden py-2">
+              <div
+                className="flex transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(-${activeMember * 100}%)` }}
+              >
+                {managingCommittee.map((member, i) => (
+                  <div key={i} className="w-full flex-shrink-0 px-2">
+                    <MemberCard member={member} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
+              {managingCommittee.map((member, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveMember(i)}
+                  aria-label={`Show ${member.name}`}
+                  className={`h-2 rounded-full transition-all ${
+                    i === activeMember ? 'w-6 bg-[#ff6b35]' : 'w-2 bg-gray-300'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Larger screens: full grid */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {managingCommittee.map((member, i) => (
               <motion.div
                 key={i}
@@ -158,52 +252,8 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: (i % 3) * 0.1, duration: 0.5 }}
-                className="group relative"
               >
-                {/* Glow border on hover */}
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-[#ff6b35] to-[#1e3a8a] rounded-3xl opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
-
-                <div className="relative bg-white rounded-3xl shadow-lg group-hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col items-center text-center group-hover:-translate-y-1">
-                  {/* Header gradient banner */}
-                  <div className="w-full h-16 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] relative">
-                    <div className="absolute -bottom-12 left-1/2 -translate-x-1/2">
-                      <div className="w-24 h-24 rounded-full overflow-hidden ring-4 ring-white shadow-xl bg-gradient-to-br from-blue-100 to-orange-100">
-                        <ImageWithFallback
-                          src={member.image}
-                          alt={member.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="w-full px-6 pt-16 pb-6 flex flex-col items-center">
-                    <span className="inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide text-white bg-gradient-to-r from-[#ff6b35] to-[#ff8c42] mb-3 shadow-sm">
-                      {member.designation}
-                    </span>
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
-                    <p className="flex items-center gap-1 text-sm text-gray-500 mb-4">
-                      <MapPin className="w-3.5 h-3.5 text-[#1e3a8a]" />
-                      {member.place}
-                    </p>
-
-                    <div className="w-full pt-4 border-t border-gray-100 space-y-2.5 text-left">
-                      <p className="flex items-center gap-2 text-sm text-gray-600">
-                        <Calendar className="w-4 h-4 text-[#ff6b35] flex-shrink-0" />
-                        <span>
-                          <span className="font-semibold text-gray-900">Age:</span> {member.age}
-                        </span>
-                      </p>
-                      <p className="flex items-start gap-2 text-sm text-gray-600">
-                        <Briefcase className="w-4 h-4 text-[#ff6b35] flex-shrink-0 mt-0.5" />
-                        <span>
-                          <span className="font-semibold text-gray-900">Profession:</span>{' '}
-                          {member.profession}
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <MemberCard member={member} />
               </motion.div>
             ))}
           </div>

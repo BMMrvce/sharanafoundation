@@ -66,7 +66,7 @@ export default function Gallery() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.5 }}
-              className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl cursor-zoom-in"
+              className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl cursor-zoom-in"
               onClick={() => setSelectedImage(galleryImageList[currentImage])}
             >
               <ImageWithFallback
