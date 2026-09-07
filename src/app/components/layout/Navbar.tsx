@@ -20,6 +20,7 @@ export default function Navbar() {
     { to: '/leadership', label: t('leadership') },
     { to: '/gallery', label: t('gallery') },
     { to: '/events', label: t('events') },
+    { to: '/upcoming-project', label: t('upcomingProject') },
     { to: '/contact', label: t('contact') },
   ];
 

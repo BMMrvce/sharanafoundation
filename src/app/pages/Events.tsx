@@ -1,8 +1,18 @@
+import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Calendar, MapPin, Clock } from 'lucide-react';
+import { Button } from '../components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '../components/ui/dialog';
+import { PdfPageViewer } from '../components/PdfPageViewer';
 
 export default function Events() {
   const { language } = useLanguage();
+  const [reportOpen, setReportOpen] = useState(false);
 
   const events = [
     {
@@ -42,7 +52,12 @@ export default function Events() {
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12">Upcoming Events</h2>
+          <div className="flex items-center justify-between mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">Upcoming Events</h2>
+            <Button onClick={() => setReportOpen(true)}>
+              {language === 'en' ? 'See More' : 'ಇನ್ನಷ್ಟು ನೋಡಿ'}
+            </Button>
+          </div>
           <div className="space-y-6">
             {events.map((event, i) => (
               <div key={i} className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-8">
@@ -75,6 +90,24 @@ export default function Events() {
           </div>
         </div>
       </section>
+
+      <Dialog open={reportOpen} onOpenChange={setReportOpen}>
+        <DialogContent
+          className="max-w-none sm:max-w-none border-0 p-0 gap-0 overflow-hidden"
+          style={{
+            width: 'min(92vw, calc(90vh * 841 / 595))',
+            maxWidth: 'none',
+            aspectRatio: '841 / 595',
+          }}
+        >
+          <DialogHeader className="sr-only">
+            <DialogTitle>
+              {language === 'en' ? 'Free Eye Camp Report (1990 - 2020)' : 'ಉಚಿತ ಕಣ್ಣಿನ ಶಿಬಿರ ವರದಿ (1990 - 2020)'}
+            </DialogTitle>
+          </DialogHeader>
+          <PdfPageViewer src="/documents/camp-report.pdf" />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

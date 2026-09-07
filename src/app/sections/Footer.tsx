@@ -1,22 +1,20 @@
+import { Link } from 'react-router';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 
+const quickLinks = [
+  { to: '/', key: 'home' },
+  { to: '/about', key: 'about' },
+  { to: '/activities', key: 'activities' },
+  { to: '/leadership', key: 'leadership' },
+  { to: '/gallery', key: 'gallery' },
+  { to: '/events', key: 'events' },
+  { to: '/upcoming-project', key: 'upcomingProject' },
+  { to: '/contact', key: 'contact' },
+];
+
 export default function Footer() {
-  const { language } = useLanguage();
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
+  const { language, t } = useLanguage();
 
   return (
     <footer className="bg-gradient-to-br from-[#1e3a8a] to-[#0f172a] text-white">
@@ -61,14 +59,14 @@ export default function Footer() {
               {language === 'en' ? 'Quick Links' : 'ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು'}
             </h3>
             <ul className="space-y-2">
-              {['home', 'about', 'activities', 'leadership', 'gallery', 'events', 'contact'].map((link) => (
-                <li key={link}>
-                  <button
-                    onClick={() => scrollToSection(link)}
+              {quickLinks.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
                     className="text-blue-200 hover:text-[#ff6b35] transition-colors text-sm"
                   >
-                    {link.charAt(0).toUpperCase() + link.slice(1)}
-                  </button>
+                    {t(link.key)}
+                  </Link>
                 </li>
               ))}
             </ul>
