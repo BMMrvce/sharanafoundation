@@ -11,6 +11,8 @@ const quickLinks = [
   { to: '/events', key: 'events' },
   { to: '/upcoming-project', key: 'upcomingProject' },
   { to: '/contact', key: 'contact' },
+  { to: '/compliance', key: 'compliance' },
+  { to: '/volunteers', key: 'volunteers' },
 ];
 
 export default function Footer() {

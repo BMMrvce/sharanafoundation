@@ -7,6 +7,8 @@ import Leadership from './pages/Leadership';
 import Gallery from './pages/Gallery';
 import Events from './pages/Events';
 import UpcomingProject from './pages/UpcomingProject';
+import Compliance from './pages/Compliance';
+import Volunteers from './pages/Volunteers';
 import Donate from './pages/Donate';
 import Contact from './pages/Contact';
 
@@ -22,6 +24,8 @@ export const router = createBrowserRouter([
       { path: 'gallery', Component: Gallery },
       { path: 'events', Component: Events },
       { path: 'upcoming-project', Component: UpcomingProject },
+      { path: 'compliance', Component: Compliance },
+      { path: 'volunteers', Component: Volunteers },
       { path: 'donate', Component: Donate },
       { path: 'contact', Component: Contact },
     ],

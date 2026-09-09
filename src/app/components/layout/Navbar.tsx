@@ -11,7 +11,7 @@ export default function Navbar() {
     setLanguage(language === 'en' ? 'kn' : 'en');
   };
 
-  const languageLabel = language === 'en' ? 'View in Kannada' : 'View in English';
+  const languageLabel = language === 'en' ? 'ಕನ್ನಡ' : 'English';
 
   const navLinks = [
     { to: '/', label: t('home') },
@@ -21,6 +21,8 @@ export default function Navbar() {
     { to: '/gallery', label: t('gallery') },
     { to: '/events', label: t('events') },
     { to: '/upcoming-project', label: t('upcomingProject') },
+    { to: '/compliance', label: t('compliance') },
+    { to: '/volunteers', label: t('volunteers') },
     { to: '/contact', label: t('contact') },
   ];
 
@@ -28,13 +30,9 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-3" onClick={() => setIsMobileMenuOpen(false)}>
+          <Link to="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
             <div className="w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-gray-100 flex items-center justify-center flex-shrink-0">
               <img src="/assets/logo.png" alt="Sharana Balaga logo" className="w-full h-full object-contain" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-xl text-gray-900">Sharana Balaga</span>
-              <span className="text-xs text-gray-600">{t('tagline')}</span>
             </div>
           </Link>
 
