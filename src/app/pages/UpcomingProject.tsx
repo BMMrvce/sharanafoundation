@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import ImageZoomModal from '../components/figma/ImageZoomModal';
@@ -33,6 +35,23 @@ const projectFacts: { label: { en: string; kn: string }; value: { en: string; kn
 export default function UpcomingProject() {
   const { language } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % galleryImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const goToPrevious = () => {
+    setCurrentImage((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
+
+  const goToNext = () => {
+    setCurrentImage((prev) => (prev + 1) % galleryImages.length);
+  };
 
   return (
     <div className="pt-16">
@@ -112,20 +131,39 @@ export default function UpcomingProject() {
               : 'ಭೂಮಿ ಪೂಜೆಯಿಂದ ಆರಂಭಿಸಿ ಪ್ರಸ್ತುತ ನಿರ್ಮಾಣ ಹಂತದವರೆಗಿನ ಪ್ರಯಾಣ.'}
           </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {galleryImages.map((src, i) => (
-              <button
-                key={src}
-                onClick={() => setSelectedImage(src)}
-                className="aspect-[4/3] rounded-xl overflow-hidden shadow-md cursor-zoom-in group"
+          <div className="relative max-w-2xl mx-auto w-full">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentImage}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.5 }}
+                className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl cursor-zoom-in"
+                onClick={() => setSelectedImage(galleryImages[currentImage])}
               >
                 <ImageWithFallback
-                  src={src}
-                  alt={`Upcoming project stage ${i + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  src={galleryImages[currentImage]}
+                  alt={`Upcoming project stage ${currentImage + 1}`}
+                  className="w-full h-full object-cover"
                 />
-              </button>
-            ))}
+              </motion.div>
+            </AnimatePresence>
+
+            <button
+              onClick={goToPrevious}
+              className="absolute left-2 sm:-left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="w-6 h-6 text-[#1e3a8a]" />
+            </button>
+            <button
+              onClick={goToNext}
+              className="absolute right-2 sm:-right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110"
+              aria-label="Next image"
+            >
+              <ChevronRight className="w-6 h-6 text-[#1e3a8a]" />
+            </button>
           </div>
 
           {selectedImage ? (

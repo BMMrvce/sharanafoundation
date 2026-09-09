@@ -1,4 +1,4 @@
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, Phone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function FloatingButtons() {
@@ -20,6 +20,15 @@ export default function FloatingButtons() {
 
   return (
     <>
+      {/* Call Floating Button */}
+      <a
+        href="tel:+919448145035"
+        className="fixed bottom-40 right-4 sm:right-6 z-40 w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110"
+        aria-label="Call us"
+      >
+        <Phone className="w-6 h-6" />
+      </a>
+
       {/* WhatsApp Floating Button */}
       <a
         href="https://wa.me/919448145035"
