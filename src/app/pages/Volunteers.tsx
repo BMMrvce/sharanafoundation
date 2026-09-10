@@ -12,8 +12,8 @@ const opportunities = [
   { icon: UserPlus, en: 'General Volunteer', kn: 'ಸಾಮಾನ್ಯ ಸ್ವಯಂಸೇವಕ' },
 ];
 
-const associates: { name: string; role?: { en: string; kn: string } }[] = [
-  { name: 'Vivekananda Sevasharma, Bengaluru' },
+const associates: { name: string; role?: { en: string; kn: string }; to?: string }[] = [
+  { name: 'Vivekananda Sevasharma, Bengaluru', to: '/volunteers/vivekananda-sevashrama' },
   { name: 'IMA Kampli & Gangavathi' },
   { name: 'Venkatesh Murthy', role: { en: 'Chairman, VKS', kn: 'ಅಧ್ಯಕ್ಷರು, VKS' } },
   { name: 'Dr Chetan & Team', role: { en: 'Ophthalmic Surgeon', kn: 'ನೇತ್ರ ಶಸ್ತ್ರಚಿಕಿತ್ಸಕರು' } },
@@ -91,12 +91,23 @@ export default function Volunteers() {
           </p>
 
           <div className="max-w-4xl mx-auto grid sm:grid-cols-2 gap-4 mb-16">
-            {associates.map((a) => (
-              <div key={a.name} className="bg-white rounded-xl p-5 shadow-sm">
-                <p className="font-semibold text-gray-900">{a.name}</p>
-                {a.role ? <p className="text-sm text-gray-500 mt-1">{a.role[language]}</p> : null}
-              </div>
-            ))}
+            {associates.map((a) =>
+              a.to ? (
+                <Link
+                  key={a.name}
+                  to={a.to}
+                  className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <p className="font-semibold text-blue-700">{a.name}</p>
+                  {a.role ? <p className="text-sm text-gray-500 mt-1">{a.role[language]}</p> : null}
+                </Link>
+              ) : (
+                <div key={a.name} className="bg-white rounded-xl p-5 shadow-sm">
+                  <p className="font-semibold text-gray-900">{a.name}</p>
+                  {a.role ? <p className="text-sm text-gray-500 mt-1">{a.role[language]}</p> : null}
+                </div>
+              ),
+            )}
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-6">

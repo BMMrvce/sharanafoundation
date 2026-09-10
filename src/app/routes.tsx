@@ -9,6 +9,7 @@ import Events from './pages/Events';
 import UpcomingProject from './pages/UpcomingProject';
 import Compliance from './pages/Compliance';
 import Volunteers from './pages/Volunteers';
+import VivekanandaSevashrama from './pages/VivekanandaSevashrama';
 import Donate from './pages/Donate';
 import Contact from './pages/Contact';
 
@@ -26,6 +27,7 @@ export const router = createBrowserRouter([
       { path: 'upcoming-project', Component: UpcomingProject },
       { path: 'compliance', Component: Compliance },
       { path: 'volunteers', Component: Volunteers },
+      { path: 'volunteers/vivekananda-sevashrama', Component: VivekanandaSevashrama },
       { path: 'donate', Component: Donate },
       { path: 'contact', Component: Contact },
     ],
