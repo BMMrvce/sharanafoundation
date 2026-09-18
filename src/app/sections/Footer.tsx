@@ -10,6 +10,7 @@ const quickLinks = [
   { to: '/gallery', key: 'gallery' },
   { to: '/events', key: 'events' },
   { to: '/upcoming-project', key: 'upcomingProject' },
+  { to: '/condolence', key: 'condolence' },
   { to: '/contact', key: 'contact' },
   { to: '/compliance', key: 'compliance' },
   { to: '/volunteers', key: 'volunteers' },

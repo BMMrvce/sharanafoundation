@@ -3,6 +3,9 @@ import { Link } from 'react-router';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Globe, Menu, X } from 'lucide-react';
 
+// Language switcher temporarily hidden in the navbar. Flip to true to restore it.
+const SHOW_LANGUAGE_SWITCHER = false;
+
 export default function Navbar() {
   const { language, setLanguage, t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,6 +26,7 @@ export default function Navbar() {
     { to: '/upcoming-project', label: t('upcomingProject') },
     { to: '/compliance', label: t('compliance') },
     { to: '/volunteers', label: t('volunteers') },
+    { to: '/condolence', label: t('condolence') },
     { to: '/contact', label: t('contact') },
   ];
 
@@ -47,13 +51,15 @@ export default function Navbar() {
               </Link>
             ))}
 
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100 whitespace-nowrap"
-            >
-              <Globe className="w-4 h-4" />
-              <span className="text-sm font-medium">{languageLabel}</span>
-            </button>
+            {SHOW_LANGUAGE_SWITCHER ? (
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100 whitespace-nowrap"
+              >
+                <Globe className="w-4 h-4" />
+                <span className="text-sm font-medium">{languageLabel}</span>
+              </button>
+            ) : null}
 
             <Link
               to="/donate"
@@ -88,16 +94,18 @@ export default function Navbar() {
               </Link>
             ))}
 
-            <button
-              onClick={() => {
-                toggleLanguage();
-                setIsMobileMenuOpen(false);
-              }}
-              className="flex items-center space-x-2 px-2 py-2.5 rounded-lg hover:bg-gray-50"
-            >
-              <Globe className="w-4 h-4" />
-              <span className="text-sm font-medium">{languageLabel}</span>
-            </button>
+            {SHOW_LANGUAGE_SWITCHER ? (
+              <button
+                onClick={() => {
+                  toggleLanguage();
+                  setIsMobileMenuOpen(false);
+                }}
+                className="flex items-center space-x-2 px-2 py-2.5 rounded-lg hover:bg-gray-50"
+              >
+                <Globe className="w-4 h-4" />
+                <span className="text-sm font-medium">{languageLabel}</span>
+              </button>
+            ) : null}
 
             <Link
               to="/donate"

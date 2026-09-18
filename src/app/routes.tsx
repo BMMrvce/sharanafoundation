@@ -11,6 +11,7 @@ import Compliance from './pages/Compliance';
 import Volunteers from './pages/Volunteers';
 import VivekanandaSevashrama from './pages/VivekanandaSevashrama';
 import Donate from './pages/Donate';
+import Condolence from './pages/Condolence';
 import Contact from './pages/Contact';
 
 export const router = createBrowserRouter([
@@ -29,6 +30,7 @@ export const router = createBrowserRouter([
       { path: 'volunteers', Component: Volunteers },
       { path: 'volunteers/vivekananda-sevashrama', Component: VivekanandaSevashrama },
       { path: 'donate', Component: Donate },
+      { path: 'condolence', Component: Condolence },
       { path: 'contact', Component: Contact },
     ],
   },
