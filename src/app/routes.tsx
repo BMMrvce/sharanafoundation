@@ -13,6 +13,7 @@ import VivekanandaSevashrama from './pages/VivekanandaSevashrama';
 import Donate from './pages/Donate';
 import Condolence from './pages/Condolence';
 import Contact from './pages/Contact';
+import Launch from './pages/Launch';
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ export const router = createBrowserRouter([
       { path: 'donate', Component: Donate },
       { path: 'condolence', Component: Condolence },
       { path: 'contact', Component: Contact },
+      { path: 'launch', Component: Launch },
     ],
   },
 ]);
